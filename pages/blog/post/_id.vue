@@ -1,5 +1,8 @@
 <template>
-  <div>{{ fetchedPost }}</div>
+  <div>
+    {{ fetchedPost }}
+    <div class="body" v-html="fetchedPost.body" />
+  </div>
 </template>
 
 <script lang="ts">
@@ -22,3 +25,9 @@ export default Vue.extend({
   },
 });
 </script>
+
+<style scoped>
+.body /deep/ h1 {
+  color: blue;
+}
+</style>
