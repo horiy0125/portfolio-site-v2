@@ -35,6 +35,7 @@ $block: '.o-psSection';
   &__headings {
     display: inline-block;
     width: 100%;
+    margin-bottom: 64px;
   }
   &__decoration {
     display: inline-block;
