@@ -42,14 +42,19 @@ $block: '.a-psTopLink';
   width: 100%;
   padding-left: 12px;
   border-left: 2px solid $color-white;
+
   @include font-size(2.4);
   &__isActive {
     border-left: 2px solid $color-default-blue;
   }
   &__inner {
-    color: $color-default-black;
     text-transform: uppercase;
     font-family: $en-font;
+    transition: 0.4s all;
+    color: $color-default-black;
+    &:hover {
+      color: $color-dark-blue;
+    }
   }
 }
 </style>

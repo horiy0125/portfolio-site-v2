@@ -41,6 +41,7 @@ $block: '.t-psSeperateView';
   &__contentsInner {
     display: inline-block;
     width: 700px;
+    padding: 128px 32px;
   }
 }
 </style>

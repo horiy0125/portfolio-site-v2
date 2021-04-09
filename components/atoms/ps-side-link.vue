@@ -42,7 +42,11 @@ $block: '.a-psSideLink';
   font-weight: 300;
   border-left: 2px solid $color-white;
   margin: 6.4px 0;
+  transition: 0.4s all;
   color: $color-default-black;
+  &:hover {
+    color: $color-dark-blue;
+  }
   @include font-size(2);
   &__isActive {
     border-left: 2px solid $color-default-blue;
