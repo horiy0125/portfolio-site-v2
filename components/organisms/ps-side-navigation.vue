@@ -33,7 +33,7 @@ export default Vue.extend({
 <style lang="scss" scoped>
 $block: '.o-psSideNavigation';
 #{$block} {
-  position: absolute;
+  position: fixed;
   top: 0;
   left: 0;
   display: flex;

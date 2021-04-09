@@ -1,7 +1,25 @@
 <template>
   <div class="m-psSideLinks">
     <ps-side-link
-      :is-active="browsedPagePath === pagePaths.blog"
+      :browsed-page-path="browsedPagePath"
+      :page-path="pagePaths.about"
+    >
+      About Me
+    </ps-side-link>
+    <ps-side-link
+      :browsed-page-path="browsedPagePath"
+      :page-path="pagePaths.development"
+    >
+      Development
+    </ps-side-link>
+    <ps-side-link
+      :browsed-page-path="browsedPagePath"
+      :page-path="pagePaths.technology"
+    >
+      Technology
+    </ps-side-link>
+    <ps-side-link
+      :browsed-page-path="browsedPagePath"
       :page-path="pagePaths.blog"
     >
       Blog

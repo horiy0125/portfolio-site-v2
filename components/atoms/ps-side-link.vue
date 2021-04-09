@@ -18,9 +18,15 @@ export default Vue.extend({
       type: String,
       required: true,
     },
-    isActive: {
-      type: Boolean,
-      default: false,
+    browsedPagePath: {
+      type: String,
+      required: true,
+    },
+  },
+
+  computed: {
+    isActive(): boolean {
+      return this.browsedPagePath.includes(this.pagePath);
     },
   },
 });
@@ -33,6 +39,7 @@ $block: '.a-psSideLink';
   padding-left: 12px;
   text-transform: uppercase;
   font-family: $en-font;
+  font-weight: 300;
   border-left: 2px solid $color-white;
   margin: 6.4px 0;
   color: $color-default-black;
