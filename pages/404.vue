@@ -1,5 +1,5 @@
 <template>
-  <div>IndexPage</div>
+  <div>404 Not found.</div>
 </template>
 
 <script lang="ts">
