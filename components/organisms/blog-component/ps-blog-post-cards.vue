@@ -6,6 +6,8 @@
       :title="post.title"
       :thumbnail="post.thumbnailUrl"
       :path="post.path"
+      :published-at="post.publishedAt"
+      :category="post.categoryName"
     />
   </div>
 </template>
