@@ -1,8 +1,20 @@
 <template>
-  <div>IndexPage</div>
+  <ps-seperate-view :browsed-page-path="browsedPagePath">
+    IndexPage
+  </ps-seperate-view>
 </template>
 
 <script lang="ts">
 import Vue from 'vue';
-export default Vue.extend({});
+import PsSeperateView from '~/components/templates/ps-seperate-view.vue';
+import pagePaths from '~/constants/page-paths';
+export default Vue.extend({
+  components: { PsSeperateView },
+
+  data() {
+    return {
+      browsedPagePath: pagePaths.top,
+    };
+  },
+});
 </script>
