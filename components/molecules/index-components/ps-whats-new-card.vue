@@ -14,6 +14,7 @@
         class="m-psWhatsNewCard__thumbnail"
         :src="thumbnailUrl"
         alt="サムネイル"
+        :full-width="false"
       />
       <h2 class="m-psWhatsNewCard__title">{{ title }}</h2>
     </main>

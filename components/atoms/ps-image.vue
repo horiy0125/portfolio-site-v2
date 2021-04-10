@@ -1,5 +1,10 @@
 <template>
-  <img class="a-psImage" :src="src" :alt="alt" decoding="async" />
+  <img
+    :class="fullWidth ? 'a-psImage a-psImage__fullWidth' : 'a-psImage'"
+    :src="src"
+    :alt="alt"
+    decoding="async"
+  />
 </template>
 
 <script lang="ts">
@@ -14,6 +19,10 @@ export default Vue.extend({
       type: String,
       default: '画像',
     },
+    fullWidth: {
+      type: Boolean,
+      default: true,
+    },
   },
 });
 </script>
@@ -21,6 +30,8 @@ export default Vue.extend({
 <style lang="scss" scoped>
 $block: '.a-psImage';
 #{$block} {
-  width: 100%;
+  &__fullWidth {
+    width: 100%;
+  }
 }
 </style>
