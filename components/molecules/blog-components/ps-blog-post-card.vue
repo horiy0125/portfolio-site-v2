@@ -16,7 +16,7 @@
             <span class="m-psBlogPostCard__category">{{ category }}</span>
           </header>
           <main class="m-psBlogPostCard__cardContents">
-            <h1 class="m-psBlogPostCard__title">{{ title }}</h1>
+            <h2 class="m-psBlogPostCard__title">{{ title }}</h2>
           </main>
           <footer class="m-psBlogPostCard__cardFooter">
             <div class="m-psBlogPostCard__decoration">→</div>

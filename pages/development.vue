@@ -9,7 +9,7 @@
 import Vue from 'vue';
 import PsSection from '~/components/organisms/ps-section.vue';
 import PsSeperateView from '~/components/templates/ps-seperate-view.vue';
-import pagePaths from '~/constants/page-paths';
+import pagePaths from '~/config/page-paths';
 export default Vue.extend({
   components: { PsSeperateView, PsSection },
 

@@ -1,6 +1,6 @@
 import devEnvironment from './development';
 import prdEnvironment from './production';
-import environments from '~/constants/config/environments';
+import environments from '~/config/environments';
 import EnvVariables from '~/types/config/env-variable';
 
 const GET_ENV_VARIABLES = (): EnvVariables => {

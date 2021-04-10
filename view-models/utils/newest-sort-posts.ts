@@ -1,9 +1,10 @@
 import BlogPostCardViewModel from '../types/blog-post-card';
+import WhatsNewViewModel from '../types/whats-new';
 import getTimestamp from '~/utils/get-timestamp';
 
 const newestSortPosts = (
-  a: BlogPostCardViewModel,
-  b: BlogPostCardViewModel,
+  a: BlogPostCardViewModel | WhatsNewViewModel,
+  b: BlogPostCardViewModel | WhatsNewViewModel,
 ): number => {
   const aTimestamp = getTimestamp(a.publishedAt);
   const bTimestamp = getTimestamp(b.publishedAt);

@@ -30,7 +30,7 @@
 <script lang="ts">
 import Vue from 'vue';
 import PsSideLink from '../atoms/ps-side-link.vue';
-import pagePaths from '~/constants/page-paths';
+import pagePaths from '~/config/page-paths';
 export default Vue.extend({
   components: { PsSideLink },
   props: {

@@ -8,12 +8,12 @@
 
 <script lang="ts">
 import Vue from 'vue';
-import PsBlogPostCards from '~/components/organisms/blog-component/ps-blog-post-cards.vue';
+import PsBlogPostCards from '~/components/organisms/blog-components/ps-blog-post-cards.vue';
 import PsSection from '~/components/organisms/ps-section.vue';
 import PsSeperateView from '~/components/templates/ps-seperate-view.vue';
 import apiEndpoints from '~/config/api/api-endpoints';
 import apiRequestHeaders from '~/config/api/api-request-headers';
-import pagePaths from '~/constants/page-paths';
+import pagePaths from '~/config/page-paths';
 import FetchPostsApiResponse from '~/types/config/api/fetch-posts';
 import FetchQiitaPostsApiResponse from '~/types/config/api/fetch-qiita-posts';
 import blogPostCardViewModel from '~/view-models/blog-post-card';

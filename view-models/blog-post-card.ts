@@ -1,15 +1,15 @@
 import BlogPostCardViewModel from './types/blog-post-card';
 import GET_ENV_VARIABLES from '~/config/env-variables';
-import environments from '~/constants/config/environments';
-import pagePaths from '~/constants/page-paths';
+import environments from '~/config/environments';
 import Post from '~/types/post';
 import QiitaPost from '~/types/qiita-post';
+import pagePaths from '~/config/page-paths';
 
 const blogPostCardViewModel = (
   posts: Post[],
   qiitaPosts: QiitaPost[],
 ): BlogPostCardViewModel[] => {
-  const integratedPosts: BlogPostCardViewModel[] = [];
+  const blogPostCardViewData: BlogPostCardViewModel[] = [];
 
   const envVariables = GET_ENV_VARIABLES();
   const onPrdEnvironment = envVariables.NODE_ENV === environments.production;
@@ -28,7 +28,7 @@ const blogPostCardViewModel = (
     const rejectPost = onPrdEnvironment && isDebugPost;
 
     if (rejectPost === false) {
-      integratedPosts.push(p);
+      blogPostCardViewData.push(p);
     }
   });
 
@@ -46,11 +46,11 @@ const blogPostCardViewModel = (
     const rejectPost = onPrdEnvironment && isDebugPost;
 
     if (rejectPost === false) {
-      integratedPosts.push(p);
+      blogPostCardViewData.push(p);
     }
   });
 
-  return integratedPosts;
+  return blogPostCardViewData;
 };
 
 export default blogPostCardViewModel;

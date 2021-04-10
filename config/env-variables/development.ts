@@ -1,4 +1,4 @@
-import environments from '~/constants/config/environments';
+import environments from '~/config/environments';
 import EnvVariables from '~/types/config/env-variable';
 
 const devEnvironment: EnvVariables = {

@@ -2,7 +2,10 @@
   <article class="o-psBlogPostDetail">
     <header class="o-psBlogPostDetail__header">
       <p>ブログ記事 >> {{ postDetail.categoryName }}</p>
-      <ps-image :src="postDetail.thumbnailUrl" />
+      <ps-image
+        v-if="postDetail.thumbnailUrl !== null"
+        :src="postDetail.thumbnailUrl"
+      />
       <h1 class="o-psBlogPostDetail__title">
         {{ postDetail.title }}
       </h1>
@@ -17,7 +20,7 @@
 import Vue, { PropType } from 'vue';
 import PsImage from '~/components/atoms/ps-image.vue';
 import PsTime from '~/components/atoms/ps-time.vue';
-import psBlogPostBody from '~/components/molecules/blog-component/ps-blog-post-body.vue';
+import psBlogPostBody from '~/components/molecules/blog-components/ps-blog-post-body.vue';
 import BlogPostDetailViewModel from '~/view-models/types/blog-post-detail';
 export default Vue.extend({
   components: { psBlogPostBody, PsImage, PsTime },

@@ -6,12 +6,12 @@
 
 <script lang="ts">
 import Vue from 'vue';
-import PsBlogPostDetail from '~/components/organisms/blog-component/ps-blog-post-detail.vue';
+import PsBlogPostDetail from '~/components/organisms/blog-components/ps-blog-post-detail.vue';
 import PsSeperateView from '~/components/templates/ps-seperate-view.vue';
 import apiEndpoints from '~/config/api/api-endpoints';
 import apiRequestHeaders from '~/config/api/api-request-headers';
-import domain from '~/constants/domain';
-import pagePaths from '~/constants/page-paths';
+import domain from '~/config/domain';
+import pagePaths from '~/config/page-paths';
 import FetchPostApiResponse from '~/types/config/api/fetch-post';
 import blogPostDetailViewModel from '~/view-models/blog-post-detail';
 export default Vue.extend({

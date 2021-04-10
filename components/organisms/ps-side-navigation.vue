@@ -11,7 +11,7 @@
 import Vue from 'vue';
 import PsTopLink from '../atoms/ps-top-link.vue';
 import PsSideLinks from '../molecules/ps-side-links.vue';
-import pagePaths from '~/constants/page-paths';
+import pagePaths from '~/config/page-paths';
 export default Vue.extend({
   components: { PsTopLink, PsSideLinks },
 

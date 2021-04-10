@@ -43,15 +43,21 @@ export default Vue.extend({
   padding: 16px;
   margin: 16px 0;
   background: #2c2a2a;
+  line-height: 24px;
+  color: #fff;
 }
 .html /deep/ code {
   font-family: 'Courier New', Courier, monospace;
-  line-height: 24px;
-  color: #fff;
 }
 .html /deep/ blockquote {
   background: rgb(221, 221, 221);
   padding: 16px;
   margin: 16px 0;
+}
+.html /deep/ ul {
+  padding: 16px 0 16px 40px;
+}
+.html /deep/ li {
+  line-height: 28px;
 }
 </style>
