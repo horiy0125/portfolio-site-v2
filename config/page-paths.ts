@@ -4,7 +4,7 @@ const pagePaths = {
   development: '/development',
   technology: '/technology',
   blog: '/blog',
-  blogPost: '/blog/post',
+  blogPost: '/blog/posts',
   notFound: '/404',
 };
 

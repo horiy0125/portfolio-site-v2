@@ -80,6 +80,7 @@ $block: '.m-psBlogPostCard';
     }
   }
   &__inner {
+    display: inline-block;
     width: 100%;
   }
   &__thumbnail {
