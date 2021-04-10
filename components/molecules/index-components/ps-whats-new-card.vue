@@ -23,7 +23,7 @@
             class="m-psWhatsNewCard__linkArrow"
             :is-small="true"
           />
-          記事を見る
+          {{ linkLabel }}
         </ps-link>
       </footer>
     </div>
@@ -58,6 +58,12 @@ export default Vue.extend({
     link: {
       type: String,
       default: null,
+    },
+  },
+
+  computed: {
+    linkLabel(): string {
+      return this.type === '記事更新' ? '記事を見る' : 'リンク先を開く';
     },
   },
 });
