@@ -5,6 +5,7 @@
       <ps-image
         v-if="postDetail.thumbnailUrl !== null"
         :src="postDetail.thumbnailUrl"
+        alt="サムネイル"
       />
       <h1 class="o-psBlogPostDetail__title">
         {{ postDetail.title }}

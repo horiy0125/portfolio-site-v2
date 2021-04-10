@@ -4,7 +4,7 @@
       v-if="thumbnailUrl !== null"
       class="m-psWhatsNewCard__thumbnailWrapper"
     >
-      <ps-image :src="thumbnailUrl" />
+      <ps-image :src="thumbnailUrl" alt="サムネイル" />
     </div>
     <div class="m-psWhatsNewCard__information">
       <header class="m-psWhatsNewCard__header">

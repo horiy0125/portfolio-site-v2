@@ -6,6 +6,7 @@
           v-if="thumbnail !== null"
           class="m-psBlogPostCard__thumbnail"
           :src="thumbnail"
+          alt="サムネイル"
         />
         <div class="m-psBlogPostCard__information">
           <header class="m-psBlogPostCard__cardHeader">
@@ -101,7 +102,7 @@ $block: '.m-psBlogPostCard';
     font-weight: 400;
   }
   &__category {
-    font-weight: 400;
+    font-weight: 300;
     border: 1px solid $color-border-black;
     padding: 4px 16px;
     border-radius: 28px;

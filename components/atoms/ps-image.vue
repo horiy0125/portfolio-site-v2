@@ -12,7 +12,7 @@ export default Vue.extend({
     },
     alt: {
       type: String,
-      default: '写真',
+      default: '画像',
     },
   },
 });
