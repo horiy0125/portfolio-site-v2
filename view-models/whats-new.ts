@@ -18,8 +18,9 @@ const whatsNewViewModel = (
 
   posts.forEach(post => {
     const w: WhatsNewViewModel = {
+      type: '記事更新',
       id: post.id,
-      title: post.title,
+      title: `ブログ記事『${post.title}』を書きました！`,
       thumbnailUrl: post.thumbnail ? post.thumbnail.url : null,
       publishedAt: post.publishedAt,
       url: `${pagePaths.blogPost}/${post.id}`,
@@ -35,8 +36,9 @@ const whatsNewViewModel = (
 
   qiitaPosts.forEach(post => {
     const w: WhatsNewViewModel = {
+      type: '記事更新',
       id: post.id,
-      title: post.title,
+      title: `Qiita記事『${post.title}』を書きました！`,
       thumbnailUrl: post.thumbnailUrl,
       publishedAt: post.publishedAt,
       url: post.url,
@@ -52,6 +54,7 @@ const whatsNewViewModel = (
 
   infoNotices.forEach(infoNotice => {
     const w: WhatsNewViewModel = {
+      type: 'お知らせ',
       id: infoNotice.id,
       title: infoNotice.content,
       thumbnailUrl: infoNotice.thumbnail ? infoNotice.thumbnail.url : null,

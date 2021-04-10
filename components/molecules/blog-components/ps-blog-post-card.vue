@@ -19,7 +19,7 @@
             <h2 class="m-psBlogPostCard__title">{{ title }}</h2>
           </main>
           <footer class="m-psBlogPostCard__cardFooter">
-            <div class="m-psBlogPostCard__decoration">→</div>
+            <ps-right-arrow />
           </footer>
         </div>
       </article>
@@ -31,9 +31,10 @@
 import Vue from 'vue';
 import PsImage from '~/components/atoms/ps-image.vue';
 import PsLink from '~/components/atoms/ps-link.vue';
+import PsRightArrow from '~/components/atoms/ps-right-arrow.vue';
 import PsTime from '~/components/atoms/ps-time.vue';
 export default Vue.extend({
-  components: { PsImage, PsLink, PsTime },
+  components: { PsImage, PsLink, PsTime, PsRightArrow },
   props: {
     title: {
       type: String,
@@ -91,10 +92,12 @@ $block: '.m-psBlogPostCard';
   }
   &__cardHeader {
     display: flex;
+    width: 100%;
     align-items: center;
     justify-content: space-between;
   }
   &__publishedAt {
+    font-family: $en-font;
     font-weight: 400;
   }
   &__category {
@@ -117,17 +120,6 @@ $block: '.m-psBlogPostCard';
     align-items: center;
     justify-content: flex-end;
     width: 100%;
-  }
-  &__decoration {
-    display: inline-block;
-    width: 48px;
-    height: 48px;
-    margin-left: auto;
-    border-radius: 50%;
-    line-height: 48px;
-    text-align: center;
-    color: $color-white;
-    background: $color-dark-blue;
   }
 }
 </style>

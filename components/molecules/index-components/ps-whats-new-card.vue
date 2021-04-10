@@ -1,15 +1,43 @@
 <template>
   <article class="m-psWhatsNewCard">
-    <ps-time :string-time="publishedAt" />
-    <h2>{{ title }}</h2>
+    <div
+      v-if="thumbnailUrl !== null"
+      class="m-psWhatsNewCard__thumbnailWrapper"
+    >
+      <ps-image :src="thumbnailUrl" />
+    </div>
+    <div class="m-psWhatsNewCard__information">
+      <header class="m-psWhatsNewCard__header">
+        <ps-time
+          class="m-psWhatsNewCard__publishedAt"
+          :string-time="publishedAt"
+        />
+        <span class="m-psWhatsNewCard__type">{{ type }}</span>
+      </header>
+      <main class="m-psWhatsNewCard__titleWrapper">
+        <h2 class="m-psWhatsNewCard__title">{{ title }}</h2>
+      </main>
+      <footer v-if="link !== null" class="m-psWhatsNewCard__footer">
+        <ps-link class="m-psWhatsNewCard__link" :href="link">
+          <ps-right-arrow
+            class="m-psWhatsNewCard__linkArrow"
+            :is-small="true"
+          />
+          記事を見る
+        </ps-link>
+      </footer>
+    </div>
   </article>
 </template>
 
 <script lang="ts">
 import Vue from 'vue';
+import PsImage from '~/components/atoms/ps-image.vue';
+import PsLink from '~/components/atoms/ps-link.vue';
+import PsRightArrow from '~/components/atoms/ps-right-arrow.vue';
 import PsTime from '~/components/atoms/ps-time.vue';
 export default Vue.extend({
-  components: { PsTime },
+  components: { PsTime, PsImage, PsRightArrow, PsLink },
   props: {
     title: {
       type: String,
@@ -19,6 +47,18 @@ export default Vue.extend({
       type: String,
       default: '',
     },
+    type: {
+      type: String,
+      default: '',
+    },
+    thumbnailUrl: {
+      type: String,
+      default: null,
+    },
+    link: {
+      type: String,
+      default: null,
+    },
   },
 });
 </script>
@@ -26,7 +66,65 @@ export default Vue.extend({
 <style lang="scss" scoped>
 $block: '.m-psWhatsNewCard';
 #{$block} {
-  display: inline-block;
+  display: flex;
   width: 100%;
+  margin: 24px 0;
+  padding: 32px;
+  border-radius: 24px;
+  overflow: hidden;
+  box-shadow: 0 10px 25px 0 rgba(0, 0, 0, 0.25);
+  &__thumbnailWrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 320px;
+    margin-right: 32px;
+  }
+  &__information {
+    display: inline-block;
+    width: 100%;
+  }
+  &__publishedAt {
+    font-family: $en-font;
+    @include font-size(1.8);
+  }
+  &__header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    margin-bottom: 16px;
+  }
+  &__type {
+    font-weight: 300;
+    border: 1px solid $color-border-black;
+    padding: 4px 16px;
+    border-radius: 28px;
+  }
+  &__titleWrapper {
+    display: inline-block;
+    width: 100%;
+  }
+  &__title {
+    font-weight: 400;
+    @include font-size(1.8);
+  }
+  &__footer {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    width: 100%;
+    padding-top: 16px;
+  }
+  &__link {
+    color: $color-dark-blue;
+    transition: 0.4s all;
+    &:hover {
+      opacity: 0.8;
+    }
+  }
+  &__linkArrow {
+    margin-right: 4px;
+  }
 }
 </style>

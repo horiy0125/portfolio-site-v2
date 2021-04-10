@@ -5,6 +5,9 @@
       :key="wn.id"
       :published-at="wn.publishedAt"
       :title="wn.title"
+      :type="wn.type"
+      :thumbnail-url="wn.thumbnailUrl"
+      :link="wn.url"
     />
   </div>
 </template>
