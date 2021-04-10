@@ -54,7 +54,10 @@ export default Vue.extend({
     whatsNewViewData.sort((a, b) => newestSortPosts(a, b));
 
     return {
-      whatsNewViewData: whatsNewViewData.slice(0, 3),
+      whatsNewViewData:
+        whatsNewViewData.length > 3
+          ? whatsNewViewData.slice(0, 3)
+          : whatsNewViewData,
     };
   },
 

@@ -68,7 +68,7 @@ $block: '.m-psWhatsNewCard';
 #{$block} {
   display: flex;
   width: 100%;
-  margin: 24px 0;
+  margin-bottom: 64px;
   padding: 32px;
   border-radius: 24px;
   overflow: hidden;
