@@ -1,16 +1,21 @@
 <template>
-  <div>
-    {{ fetchedPost }}
-    <div class="body" v-html="fetchedPost.body" />
-  </div>
+  <ps-seperate-view :browsed-page-path="pagePath">
+    <ps-blog-post-detail :post-detail="blogPostDetailViewData" />
+  </ps-seperate-view>
 </template>
 
 <script lang="ts">
 import Vue from 'vue';
+import PsBlogPostDetail from '~/components/organisms/blog-component/ps-blog-post-detail.vue';
+import PsSeperateView from '~/components/templates/ps-seperate-view.vue';
 import apiEndpoints from '~/config/api/api-endpoints';
 import apiRequestHeaders from '~/config/api/api-request-headers';
+import domain from '~/constants/domain';
+import pagePaths from '~/constants/page-paths';
 import FetchPostApiResponse from '~/types/config/api/fetch-post';
+import blogPostDetailViewModel from '~/view-models/blog-post-detail';
 export default Vue.extend({
+  components: { PsSeperateView, PsBlogPostDetail },
   async asyncData({ $axios, params }) {
     const id = params.id;
     const url = `${apiEndpoints.posts}/${id}`;
@@ -19,15 +24,15 @@ export default Vue.extend({
       headers: apiRequestHeaders,
     });
 
+    const blogPostDetailViewData = blogPostDetailViewModel(res);
+
+    const pagePath = `${pagePaths.blogPost}/${id}`;
+
     return {
-      fetchedPost: res,
+      pageUrl: domain + pagePath,
+      pagePath,
+      blogPostDetailViewData,
     };
   },
 });
 </script>
-
-<style scoped>
-.body /deep/ h1 {
-  color: blue;
-}
-</style>

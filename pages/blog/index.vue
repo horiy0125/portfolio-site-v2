@@ -17,8 +17,8 @@ import pagePaths from '~/constants/page-paths';
 import FetchPostsApiResponse from '~/types/config/api/fetch-posts';
 import FetchQiitaPostsApiResponse from '~/types/config/api/fetch-qiita-posts';
 import blogPostCardViewModel from '~/view-models/blog-post-card';
-import newestSortPosts from '~/view-models/blog-post-card/newest-sort-posts';
 import BlogPostCardViewModel from '~/view-models/types/blog-post-card';
+import newestSortPosts from '~/view-models/utils/newest-sort-posts';
 export default Vue.extend({
   components: { PsSeperateView, PsSection, PsBlogPostCards },
 

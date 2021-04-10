@@ -15,10 +15,12 @@
             />
             <span class="m-psBlogPostCard__category">{{ category }}</span>
           </header>
-          <h1 class="m-psBlogPostCard__title">{{ title }}</h1>
-          <div class="m-psBlogPostCard__decorationWrapper">
+          <main class="m-psBlogPostCard__cardContents">
+            <h1 class="m-psBlogPostCard__title">{{ title }}</h1>
+          </main>
+          <footer class="m-psBlogPostCard__cardFooter">
             <div class="m-psBlogPostCard__decoration">→</div>
-          </div>
+          </footer>
         </div>
       </article>
     </ps-link>
@@ -79,7 +81,7 @@ $block: '.m-psBlogPostCard';
     width: 100%;
   }
   &__thumbnail {
-    height: calc(572px / 1200 * 630);
+    height: 300.3px;
     object-fit: cover;
   }
   &__information {
@@ -101,13 +103,18 @@ $block: '.m-psBlogPostCard';
     padding: 4px 16px;
     border-radius: 28px;
   }
+  &__cardContents {
+    display: inline-block;
+    width: 100%;
+  }
   &__title {
     font-weight: 600;
     margin: 16px 0;
     @include font-size(2.4);
   }
-  &__decorationWrapper {
+  &__cardFooter {
     display: flex;
+    align-items: center;
     justify-content: flex-end;
     width: 100%;
   }

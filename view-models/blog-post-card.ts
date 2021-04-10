@@ -1,4 +1,4 @@
-import BlogPostCardViewModel from '../types/blog-post-card';
+import BlogPostCardViewModel from './types/blog-post-card';
 import GET_ENV_VARIABLES from '~/config/env-variables';
 import environments from '~/constants/config/environments';
 import pagePaths from '~/constants/page-paths';
