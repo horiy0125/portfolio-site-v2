@@ -1,32 +1,29 @@
 <template>
   <article class="m-psWhatsNewCard">
-    <div
-      v-if="thumbnailUrl !== null"
-      class="m-psWhatsNewCard__thumbnailWrapper"
-    >
-      <ps-image :src="thumbnailUrl" alt="サムネイル" />
-    </div>
-    <div class="m-psWhatsNewCard__information">
-      <header class="m-psWhatsNewCard__header">
-        <ps-time
-          class="m-psWhatsNewCard__publishedAt"
-          :string-time="publishedAt"
-        />
-        <span class="m-psWhatsNewCard__type">{{ type }}</span>
-      </header>
-      <main class="m-psWhatsNewCard__titleWrapper">
-        <h2 class="m-psWhatsNewCard__title">{{ title }}</h2>
-      </main>
-      <footer v-if="link !== null" class="m-psWhatsNewCard__footer">
-        <ps-link class="m-psWhatsNewCard__link" :href="link">
-          <ps-right-arrow
-            class="m-psWhatsNewCard__linkArrow"
-            :is-small="true"
-          />
-          {{ linkLabel }}
-        </ps-link>
-      </footer>
-    </div>
+    <header class="m-psWhatsNewCard__header">
+      <ps-time
+        class="m-psWhatsNewCard__publishedAt"
+        :string-time="publishedAt"
+      />
+      <span class="m-psWhatsNewCard__type">{{ type }}</span>
+    </header>
+
+    <main class="m-psWhatsNewCard__main">
+      <ps-image
+        v-if="thumbnailUrl !== null"
+        class="m-psWhatsNewCard__thumbnail"
+        :src="thumbnailUrl"
+        alt="サムネイル"
+      />
+      <h2 class="m-psWhatsNewCard__title">{{ title }}</h2>
+    </main>
+
+    <footer v-if="link !== null" class="m-psWhatsNewCard__footer">
+      <ps-link class="m-psWhatsNewCard__link" :href="link">
+        <ps-right-arrow class="m-psWhatsNewCard__linkArrow" :is-small="true" />
+        {{ linkLabel }}
+      </ps-link>
+    </footer>
   </article>
 </template>
 
@@ -72,28 +69,13 @@ export default Vue.extend({
 <style lang="scss" scoped>
 $block: '.m-psWhatsNewCard';
 #{$block} {
-  display: flex;
+  display: inline-block;
   width: 100%;
   margin-bottom: 64px;
   padding: 32px;
   border-radius: 24px;
   overflow: hidden;
   box-shadow: 0 10px 25px 0 rgba(0, 0, 0, 0.25);
-  &__thumbnailWrapper {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 320px;
-    margin-right: 32px;
-  }
-  &__information {
-    display: inline-block;
-    width: 100%;
-  }
-  &__publishedAt {
-    font-family: $en-font;
-    @include font-size(1.8);
-  }
   &__header {
     display: flex;
     align-items: center;
@@ -101,15 +83,24 @@ $block: '.m-psWhatsNewCard';
     width: 100%;
     margin-bottom: 16px;
   }
+  &__publishedAt {
+    font-family: $en-font;
+    @include font-size(1.8);
+  }
   &__type {
     font-weight: 300;
     border: 1px solid $color-border-black;
     padding: 4px 16px;
     border-radius: 28px;
   }
-  &__titleWrapper {
-    display: inline-block;
+  &__main {
+    display: flex;
+    align-items: center;
     width: 100%;
+  }
+  &__thumbnail {
+    width: 192px;
+    margin-right: 32px;
   }
   &__title {
     font-weight: 400;
