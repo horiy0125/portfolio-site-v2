@@ -1,6 +1,9 @@
 <template>
   <ps-seperate-view :browsed-page-path="pagePath">
-    <ps-blog-post-detail :post-detail="blogPostDetailViewData" />
+    <ps-blog-post-detail
+      :page-url="pageUrl"
+      :post-detail="blogPostDetailViewData"
+    />
   </ps-seperate-view>
 </template>
 
