@@ -75,15 +75,20 @@ $block: '.o-psBlogPostDetail';
     width: 100%;
   }
   &__pageStepper {
-    display: inline-block;
+    display: flex;
+    align-items: center;
     width: 100%;
-    padding: 24px 0 24px 16px;
+    padding: 16px 0 16px 16px;
   }
   &__blogLink {
     color: $color-default-black;
+    transition: 0.4s all;
+    &:hover {
+      color: $color-default-blue;
+    }
   }
   &__stepperDivider {
-    padding: 0 8px;
+    padding: 0 12px;
   }
   &__categoryName {
     font-weight: 300;
