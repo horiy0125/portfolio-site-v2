@@ -24,12 +24,17 @@ export default Vue.extend({
 .html /deep/ h1 {
   font-size: 24px;
   font-weight: 600;
-  padding: 8px 0;
+  margin: 32px 0 16px 0;
 }
 .html /deep/ h2 {
   font-size: 20px;
   font-weight: 500;
-  padding: 4px 0;
+  margin: 16px 0 8px 0;
+}
+.html /deep/ h3 {
+  font-size: 18px;
+  font-weight: 400;
+  margin: 16px 0 4px 0;
 }
 .html /deep/ p {
   font-weight: 300;
@@ -38,6 +43,7 @@ export default Vue.extend({
 }
 .html /deep/ img {
   width: 100%;
+  margin: 16px 0;
 }
 .html /deep/ pre {
   padding: 16px;
@@ -47,7 +53,7 @@ export default Vue.extend({
   color: #fff;
 }
 .html /deep/ code {
-  font-family: 'Courier New', Courier, monospace;
+  font-family: monospace;
 }
 .html /deep/ blockquote {
   background: rgb(221, 221, 221);
