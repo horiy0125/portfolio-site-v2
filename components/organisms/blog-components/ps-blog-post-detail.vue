@@ -97,7 +97,7 @@ $block: '.o-psBlogPostDetail';
     border-radius: 28px;
   }
   &__title {
-    font-weight: 600;
+    font-weight: 700;
     padding: 24px 0;
   }
   &__subHeader {
