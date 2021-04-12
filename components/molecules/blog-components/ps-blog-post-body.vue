@@ -22,12 +22,12 @@ export default Vue.extend({
   width: 100%;
 }
 .html /deep/ h1 {
-  font-size: 24px;
+  font-size: 28px;
   font-weight: 600;
   margin: 32px 0 16px 0;
 }
 .html /deep/ h2 {
-  font-size: 20px;
+  font-size: 24px;
   font-weight: 500;
   margin: 16px 0 8px 0;
 }
@@ -37,8 +37,8 @@ export default Vue.extend({
   margin: 16px 0 4px 0;
 }
 .html /deep/ p {
-  font-weight: 300;
-  line-height: 24px;
+  font-weight: 400;
+  line-height: 28px;
   padding: 16px 0;
 }
 .html /deep/ img {
