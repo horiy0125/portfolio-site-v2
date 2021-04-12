@@ -28,7 +28,7 @@ export default Vue.extend({
 }
 .html /deep/ h2 {
   font-size: 24px;
-  font-weight: 600;
+  font-weight: 500;
   margin: 16px 0 8px 0;
 }
 .html /deep/ h3 {
