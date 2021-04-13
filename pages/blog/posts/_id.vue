@@ -1,6 +1,6 @@
 <template>
   <ps-seperate-view :browsed-page-path="pagePath">
-    <div v-if="invalidPostId">404 Not found.</div>
+    <ps-not-found v-if="invalidPostId" />
     <ps-blog-post-detail
       v-else
       :page-url="pageUrl"
@@ -12,6 +12,7 @@
 <script lang="ts">
 import Vue from 'vue';
 import PsBlogPostDetail from '~/components/organisms/blog-components/ps-blog-post-detail.vue';
+import PsNotFound from '~/components/organisms/not-found-components/ps-not-found.vue';
 import PsSeperateView from '~/components/templates/ps-seperate-view.vue';
 import apiEndpoints from '~/config/api/api-endpoints';
 import apiRequestHeaders from '~/config/api/api-request-headers';
@@ -21,7 +22,7 @@ import FetchPostApiResponse from '~/types/config/api/fetch-post';
 import FetchPostsApiResponse from '~/types/config/api/fetch-posts';
 import blogPostDetailViewModel from '~/view-models/blog-post-detail';
 export default Vue.extend({
-  components: { PsSeperateView, PsBlogPostDetail },
+  components: { PsSeperateView, PsBlogPostDetail, PsNotFound },
 
   async asyncData({ $axios, params }) {
     const postsRes: FetchPostsApiResponse = await $axios.$get(
