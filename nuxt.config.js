@@ -70,7 +70,8 @@ export default {
   vuetify: {
     customVariables: ['./assets/styles/foundation/_variables.scss'],
     theme: {
-      dark: true,
+      // TODO: do proper theme settings
+      dark: false,
       themes: {
         dark: {
           primary: colors.blue.darken2,

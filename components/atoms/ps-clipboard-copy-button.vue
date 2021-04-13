@@ -1,12 +1,21 @@
 <template>
   <button class="a-psClipboardCopyButton" @click="copyUrlToClipboard">
     <v-icon class="a-psClipboardCopyButton__icon"> mdi-content-copy </v-icon>
+    <ps-snackbar
+      :show="showSnackbar"
+      :message="snackbarMessage"
+      :type="snackbarType"
+      @set-show-snackbar="setShowSnackbar"
+    />
   </button>
 </template>
 
 <script lang="ts">
 import Vue from 'vue';
+import PsSnackbar from './ps-snackbar.vue';
+import copyStringToClipboard from '~/utils/copy-string-to-clipboard';
 export default Vue.extend({
+  components: { PsSnackbar },
   props: {
     toCopyUrl: {
       type: String,
@@ -16,20 +25,27 @@ export default Vue.extend({
 
   data() {
     return {
-      baloonContent: '',
+      snackbarMessage: '',
+      showSnackbar: false,
+      snackbarType: '',
     };
   },
 
   methods: {
+    setShowSnackbar(showSnackbar: boolean): void {
+      this.showSnackbar = showSnackbar;
+    },
     async copyUrlToClipboard(): Promise<void> {
-      await navigator.clipboard.writeText(this.toCopyUrl);
-      // const result = copyStringToClipboard(this.toCopyUrl);
-      // // if (result === true) {
-      // //   this.baloonContent = 'クリップボードにURLをコピーしました！';
-      // // } else {
-      // //   this.baloonContent =
-      // //     'URLのコピーに失敗しました。もう一度お試しください。';
-      // // }
+      const succeededCopy = await copyStringToClipboard(this.toCopyUrl);
+      if (succeededCopy) {
+        this.snackbarMessage = 'URLをクリップボードにコピーしました';
+        this.snackbarType = 'success';
+      } else {
+        this.snackbarMessage =
+          'URLのコピーに失敗しました。もう一度お試しください。';
+        this.snackbarType = 'error';
+      }
+      this.setShowSnackbar(true);
     },
   },
 });
