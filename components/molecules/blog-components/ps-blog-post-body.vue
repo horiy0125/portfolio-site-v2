@@ -20,6 +20,7 @@ export default Vue.extend({
 .m-psBlogPostBody {
   display: inline-block;
   width: 100%;
+  font-family: 'Noto Sans JP', sans-serif;
 }
 .html /deep/ h1 {
   font-size: 28px;

@@ -1,21 +1,16 @@
 <template>
   <button class="a-psClipboardCopyButton" @click="copyUrlToClipboard">
-    <v-icon class="a-psClipboardCopyButton__icon"> mdi-content-copy </v-icon>
-    <ps-snackbar
-      :show="showSnackbar"
-      :message="snackbarMessage"
-      :type="snackbarType"
-      @set-show-snackbar="setShowSnackbar"
-    />
+    <ps-icon class="a-psClipboardCopyButton__icon">mdi-content-copy</ps-icon>
   </button>
 </template>
 
 <script lang="ts">
 import Vue from 'vue';
-import PsSnackbar from './ps-snackbar.vue';
+import PsIcon from './ps-icon.vue';
 import copyStringToClipboard from '~/utils/copy-string-to-clipboard';
+import shareMedia from '~/constants/share-media';
 export default Vue.extend({
-  components: { PsSnackbar },
+  components: { PsIcon },
   props: {
     toCopyUrl: {
       type: String,
@@ -23,29 +18,14 @@ export default Vue.extend({
     },
   },
 
-  data() {
-    return {
-      snackbarMessage: '',
-      showSnackbar: false,
-      snackbarType: '',
-    };
-  },
-
   methods: {
-    setShowSnackbar(showSnackbar: boolean): void {
-      this.showSnackbar = showSnackbar;
-    },
     async copyUrlToClipboard(): Promise<void> {
       const succeededCopy = await copyStringToClipboard(this.toCopyUrl);
       if (succeededCopy) {
-        this.snackbarMessage = 'URLをクリップボードにコピーしました';
-        this.snackbarType = 'success';
+        this.$emit('succeeded-sharing', shareMedia.clipboard);
       } else {
-        this.snackbarMessage =
-          'URLのコピーに失敗しました。もう一度お試しください。';
-        this.snackbarType = 'error';
+        this.$emit('failed-sharing', shareMedia.clipboard);
       }
-      this.setShowSnackbar(true);
     },
   },
 });
@@ -59,7 +39,7 @@ $block: '.a-psClipboardCopyButton';
   &__icon {
     transition: 0.4s all;
     &:hover {
-      color: $color-default-black;
+      color: $color-default-green;
     }
   }
 }

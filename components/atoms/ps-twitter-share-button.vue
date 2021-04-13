@@ -1,12 +1,15 @@
 <template>
   <button class="a-psTwitterShareButton">
-    <v-icon class="a-psTwitterShareButton__icon"> mdi-twitter </v-icon>
+    <ps-icon class="a-psTwitterShareButton__icon">mdi-twitter</ps-icon>
   </button>
 </template>
 
 <script lang="ts">
 import Vue from 'vue';
-export default Vue.extend({});
+import PsIcon from './ps-icon.vue';
+export default Vue.extend({
+  components: { PsIcon },
+});
 </script>
 
 <style lang="scss" scoped>

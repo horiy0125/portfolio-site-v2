@@ -5,8 +5,7 @@
 </template>
 
 <script lang="ts">
-import Vue, { PropType } from 'vue';
-import SnackbarTypes from '~/types/snackbar-types';
+import Vue from 'vue';
 export default Vue.extend({
   props: {
     message: {
@@ -22,7 +21,7 @@ export default Vue.extend({
       default: false,
     },
     type: {
-      type: String as PropType<SnackbarTypes>,
+      type: String,
       default: 'undefined',
     },
   },
