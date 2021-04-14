@@ -5,9 +5,9 @@
   >
     <div class="a-psTopLink__inner">
       Portfolio
-      <ps-responsive-break :is-show-pc="true" />
+      <br />
       of
-      <ps-responsive-break :is-show-pc="true" />
+      <br />
       Kaito Horiuchi
     </div>
   </ps-link>
@@ -16,10 +16,9 @@
 <script lang="ts">
 import Vue from 'vue';
 import PsLink from './ps-link.vue';
-import PsResponsiveBreak from './ps-responsive-break.vue';
 import pagePaths from '~/config/page-paths';
 export default Vue.extend({
-  components: { PsLink, PsResponsiveBreak },
+  components: { PsLink },
 
   props: {
     isActive: {
@@ -50,9 +49,8 @@ $block: '.a-psTopLink';
   &__inner {
     text-transform: uppercase;
     font-family: $en-font;
-    transition: 0.4s all;
     color: $color-default-black;
-    &:hover {
+    @include hover {
       color: $color-dark-blue;
     }
   }

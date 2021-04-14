@@ -31,23 +31,39 @@
 
     <ps-blog-post-body :body="postDetail.body" />
 
-    <footer class="o-psBlogPostDetail__footer"></footer>
+    <footer class="o-psBlogPostDetail__footer">
+      <ps-link class="o-psBlogPostDetail__footerLink" :href="pagePaths.blog">
+        <ps-arrow :is-small="true" :direction="stringArrows.left" />
+        <span class="o-psBlogPostDetail__footerLinkLabel">
+          ブログ記事一覧に戻る
+        </span>
+      </ps-link>
+    </footer>
   </article>
 </template>
 
 <script lang="ts">
 import Vue, { PropType } from 'vue';
+import PsArrow from '~/components/atoms/ps-arrow.vue';
 import PsImage from '~/components/atoms/ps-image.vue';
 import PsLink from '~/components/atoms/ps-link.vue';
 import PsTime from '~/components/atoms/ps-time.vue';
 import psBlogPostBody from '~/components/molecules/blog-components/ps-blog-post-body.vue';
 import PsBlogShareButtons from '~/components/molecules/blog-components/ps-blog-share-buttons.vue';
+import pageNames from '~/config/page-names';
 import pagePaths from '~/config/page-paths';
 import stringArrows from '~/constants/string-arrows';
 import WebShareData from '~/types/web-share-data';
 import BlogPostDetailViewModel from '~/view-models/types/blog-post-detail';
 export default Vue.extend({
-  components: { psBlogPostBody, PsImage, PsTime, PsLink, PsBlogShareButtons },
+  components: {
+    psBlogPostBody,
+    PsImage,
+    PsTime,
+    PsLink,
+    PsBlogShareButtons,
+    PsArrow,
+  },
   props: {
     postDetail: {
       type: Object as PropType<BlogPostDetailViewModel>,
@@ -63,6 +79,7 @@ export default Vue.extend({
     return {
       pagePaths,
       stringArrows,
+      pageNames,
     };
   },
 
@@ -97,8 +114,7 @@ $block: '.o-psBlogPostDetail';
   }
   &__blogLink {
     color: $color-default-black;
-    transition: 0.4s all;
-    &:hover {
+    @include hover {
       color: $color-default-blue;
     }
   }
@@ -127,8 +143,21 @@ $block: '.o-psBlogPostDetail';
     font-family: $en-font;
   }
   &__footer {
-    display: inline-block;
+    display: flex;
+    justify-content: flex-end;
     width: 100%;
+    padding: 32px 0;
+  }
+  &__footerLink {
+    display: flex;
+    align-items: center;
+    @include hover {
+      letter-spacing: 1px;
+    }
+  }
+  &__footerLinkLabel {
+    padding: 4px 8px;
+    color: $color-dark-blue;
   }
 }
 </style>

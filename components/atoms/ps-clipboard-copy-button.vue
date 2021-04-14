@@ -37,9 +37,8 @@ $block: '.a-psClipboardCopyButton';
   padding: 4px;
   margin: 0 4px;
   &__icon {
-    transition: 0.4s all;
-    &:hover {
-      color: $color-default-green;
+    @include hover {
+      color: $color-default-black;
     }
   }
 }

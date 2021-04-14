@@ -1,25 +1,35 @@
 <template>
-  <div
-    :class="isSmall ? 'a-psRightArrow a-psRightArrow__small' : 'a-psRightArrow'"
-  >
-    →
+  <div :class="isSmall ? 'a-psArrow a-psArrow__small' : 'a-psArrow'">
+    {{ direction === stringArrows.left ? '←' : '→' }}
   </div>
 </template>
 
 <script lang="ts">
 import Vue from 'vue';
+import stringArrows from '~/constants/string-arrows';
+
 export default Vue.extend({
   props: {
     isSmall: {
       type: Boolean,
       default: false,
     },
+    direction: {
+      type: String,
+      default: stringArrows.right,
+    },
+  },
+
+  data() {
+    return {
+      stringArrows,
+    };
   },
 });
 </script>
 
 <style lang="scss" scoped>
-$block: '.a-psRightArrow';
+$block: '.a-psArrow';
 #{$block} {
   display: inline-block;
   width: 48px;

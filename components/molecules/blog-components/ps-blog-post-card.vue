@@ -20,7 +20,7 @@
             <h2 class="m-psBlogPostCard__title">{{ title }}</h2>
           </main>
           <footer class="m-psBlogPostCard__cardFooter">
-            <ps-right-arrow />
+            <ps-arrow />
           </footer>
         </div>
       </article>
@@ -30,12 +30,12 @@
 
 <script lang="ts">
 import Vue from 'vue';
+import PsArrow from '~/components/atoms/ps-arrow.vue';
 import PsImage from '~/components/atoms/ps-image.vue';
 import PsLink from '~/components/atoms/ps-link.vue';
-import PsRightArrow from '~/components/atoms/ps-right-arrow.vue';
 import PsTime from '~/components/atoms/ps-time.vue';
 export default Vue.extend({
-  components: { PsImage, PsLink, PsTime, PsRightArrow },
+  components: { PsImage, PsLink, PsTime, PsArrow },
   props: {
     title: {
       type: String,
@@ -73,8 +73,7 @@ $block: '.m-psBlogPostCard';
     overflow: hidden;
     color: $color-default-black;
     box-shadow: 0 10px 25px 0 rgba(0, 0, 0, 0.25);
-    transition: 0.4s all;
-    &:hover {
+    @include hover {
       opacity: 0.92;
       box-shadow: 0 20px 50px 0 rgba(0, 0, 0, 0.25);
     }

@@ -43,8 +43,7 @@ $block: '.a-psWebShareButton';
   padding: 4px;
   margin: 0 4px;
   &__icon {
-    transition: 0.4s all;
-    &:hover {
+    @include hover {
       color: $color-default-blue;
     }
   }

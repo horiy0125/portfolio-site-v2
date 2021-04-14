@@ -16,6 +16,7 @@ export default Vue.extend({
       default: '',
     },
   },
+
   computed: {
     isNuxtLink(): boolean {
       if (this.href.includes('http')) {

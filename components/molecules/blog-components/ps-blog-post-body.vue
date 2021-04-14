@@ -39,7 +39,7 @@ export default Vue.extend({
 }
 .html /deep/ p {
   font-weight: 400;
-  line-height: 28px;
+  line-height: 1.8;
   padding: 16px 0;
 }
 .html /deep/ img {
@@ -50,11 +50,8 @@ export default Vue.extend({
   padding: 16px;
   margin: 16px 0;
   background: #2c2a2a;
-  line-height: 24px;
+  line-height: 1.8;
   color: #fff;
-}
-.html /deep/ code {
-  font-family: monospace;
 }
 .html /deep/ blockquote {
   background: rgb(221, 221, 221);
@@ -65,6 +62,6 @@ export default Vue.extend({
   padding: 16px 0 16px 40px;
 }
 .html /deep/ li {
-  line-height: 28px;
+  line-height: 1.8;
 }
 </style>

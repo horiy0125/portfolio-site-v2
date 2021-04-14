@@ -4,25 +4,25 @@
       :browsed-page-path="browsedPagePath"
       :page-path="pagePaths.about"
     >
-      About Me
+      {{ pageNames.about }}
     </ps-side-link>
     <ps-side-link
       :browsed-page-path="browsedPagePath"
       :page-path="pagePaths.development"
     >
-      Development
+      {{ pageNames.development }}
     </ps-side-link>
     <ps-side-link
       :browsed-page-path="browsedPagePath"
       :page-path="pagePaths.technology"
     >
-      Technology
+      {{ pageNames.technology }}
     </ps-side-link>
     <ps-side-link
       :browsed-page-path="browsedPagePath"
       :page-path="pagePaths.blog"
     >
-      Blog
+      {{ pageNames.blog }}
     </ps-side-link>
   </div>
 </template>
@@ -31,6 +31,7 @@
 import Vue from 'vue';
 import PsSideLink from '../atoms/ps-side-link.vue';
 import pagePaths from '~/config/page-paths';
+import pageNames from '~/config/page-names';
 export default Vue.extend({
   components: { PsSideLink },
   props: {
@@ -43,6 +44,7 @@ export default Vue.extend({
   data() {
     return {
       pagePaths,
+      pageNames,
     };
   },
 });

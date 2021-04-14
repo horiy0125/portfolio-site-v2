@@ -21,7 +21,7 @@
 
     <footer v-if="link !== null" class="m-psWhatsNewCard__footer">
       <ps-link class="m-psWhatsNewCard__link" :href="link">
-        <ps-right-arrow class="m-psWhatsNewCard__linkArrow" :is-small="true" />
+        <ps-arrow class="m-psWhatsNewCard__linkArrow" :is-small="true" />
         {{ linkLabel }}
       </ps-link>
     </footer>
@@ -30,12 +30,12 @@
 
 <script lang="ts">
 import Vue from 'vue';
+import PsArrow from '~/components/atoms/ps-arrow.vue';
 import PsImage from '~/components/atoms/ps-image.vue';
 import PsLink from '~/components/atoms/ps-link.vue';
-import PsRightArrow from '~/components/atoms/ps-right-arrow.vue';
 import PsTime from '~/components/atoms/ps-time.vue';
 export default Vue.extend({
-  components: { PsTime, PsImage, PsRightArrow, PsLink },
+  components: { PsTime, PsImage, PsLink, PsArrow },
   props: {
     title: {
       type: String,
@@ -116,9 +116,8 @@ $block: '.m-psWhatsNewCard';
   }
   &__link {
     color: $color-dark-blue;
-    transition: 0.4s all;
-    &:hover {
-      opacity: 0.8;
+    @include hover {
+      letter-spacing: 1px;
     }
   }
   &__linkArrow {
