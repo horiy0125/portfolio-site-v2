@@ -1,6 +1,12 @@
 <template>
-  <button class="a-psTwitterShareButton">
+  <button class="a-psTwitterShareButton" @click="openTwitterShareWindow">
     <ps-icon class="a-psTwitterShareButton__icon">mdi-twitter</ps-icon>
+
+    <script
+      async
+      src="https://platform.twitter.com/widgets.js"
+      charset="utf-8"
+    ></script>
   </button>
 </template>
 
@@ -9,6 +15,16 @@ import Vue from 'vue';
 import PsIcon from './ps-icon.vue';
 export default Vue.extend({
   components: { PsIcon },
+
+  methods: {
+    openTwitterShareWindow(): void {
+      window.open(
+        'https://twitter.com/share?ref_src=twsrc%5Etfw',
+        'Twitter',
+        'noopener',
+      );
+    },
+  },
 });
 </script>
 

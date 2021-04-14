@@ -71,7 +71,7 @@ export default Vue.extend({
       const webShareData: WebShareData = {
         url: this.pageUrl,
         title: 'hori-blog',
-        text: this.postDetail.title,
+        text: `${this.postDetail.title}｜hori-blog`,
       };
 
       return webShareData;
