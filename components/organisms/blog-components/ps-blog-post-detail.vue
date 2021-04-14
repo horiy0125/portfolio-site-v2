@@ -25,7 +25,7 @@
           class="o-psBlogPostDetail__publishedAt"
           :string-time="postDetail.publishedAt"
         />
-        <ps-share-buttons :to-share-url="pageUrl" />
+        <ps-blog-share-buttons :to-share-data="toShareData" />
       </div>
     </header>
 
@@ -41,12 +41,13 @@ import PsImage from '~/components/atoms/ps-image.vue';
 import PsLink from '~/components/atoms/ps-link.vue';
 import PsTime from '~/components/atoms/ps-time.vue';
 import psBlogPostBody from '~/components/molecules/blog-components/ps-blog-post-body.vue';
-import PsShareButtons from '~/components/molecules/ps-share-buttons.vue';
+import PsBlogShareButtons from '~/components/molecules/blog-components/ps-blog-share-buttons.vue';
 import pagePaths from '~/config/page-paths';
 import stringArrows from '~/constants/string-arrows';
+import WebShareData from '~/types/web-share-data';
 import BlogPostDetailViewModel from '~/view-models/types/blog-post-detail';
 export default Vue.extend({
-  components: { psBlogPostBody, PsImage, PsTime, PsLink, PsShareButtons },
+  components: { psBlogPostBody, PsImage, PsTime, PsLink, PsBlogShareButtons },
   props: {
     postDetail: {
       type: Object as PropType<BlogPostDetailViewModel>,
@@ -63,6 +64,18 @@ export default Vue.extend({
       pagePaths,
       stringArrows,
     };
+  },
+
+  computed: {
+    toShareData(): WebShareData {
+      const webShareData: WebShareData = {
+        url: this.pageUrl,
+        title: 'hori-blog',
+        text: this.postDetail.title,
+      };
+
+      return webShareData;
+    },
   },
 });
 </script>

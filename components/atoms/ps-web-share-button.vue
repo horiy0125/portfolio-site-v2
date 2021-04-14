@@ -9,6 +9,7 @@ import Vue, { PropType } from 'vue';
 import PsIcon from './ps-icon.vue';
 import WebShareData from '~/types/web-share-data';
 import shareMedia from '~/constants/share-media';
+import callWebShareApi from '~/utils/call-web-share-api';
 export default Vue.extend({
   components: { PsIcon },
 
@@ -24,7 +25,12 @@ export default Vue.extend({
       if (this.toShareData === null) {
         this.$emit('failed-sharing', shareMedia.webShareApi);
       } else {
-        navigator.share();
+        const succeededShare = callWebShareApi(this.toShareData);
+        if (succeededShare) {
+          this.$emit('succeeded-sharing', shareMedia.webShareApi);
+        } else {
+          this.$emit('failed-sharing', shareMedia.webShareApi);
+        }
       }
     },
   },

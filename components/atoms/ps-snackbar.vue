@@ -1,5 +1,5 @@
 <template>
-  <v-snackbar v-if="message !== ''" v-model="snackbar" :top="top" :color="type">
+  <v-snackbar v-model="snackbar" :top="top" :color="type">
     {{ message }}
   </v-snackbar>
 </template>

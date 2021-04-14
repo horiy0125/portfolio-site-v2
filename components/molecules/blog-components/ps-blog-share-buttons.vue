@@ -2,11 +2,12 @@
   <div class="m-psShareButtons">
     <ps-twitter-share-button />
     <ps-clipboard-copy-button
-      :to-copy-url="toShareUrl"
+      :to-copy-url="toShareData.url"
       @succeeded-sharing="succeededSharing"
       @failed-sharing="failedSharing"
     />
     <ps-web-share-button
+      :to-share-data="toShareData"
       @succeeded-sharing="succeededSharing"
       @failed-sharing="failedSharing"
     />
@@ -20,13 +21,14 @@
 </template>
 
 <script lang="ts">
-import Vue from 'vue';
-import PsClipboardCopyButton from '../atoms/ps-clipboard-copy-button.vue';
-import PsSnackbar from '../atoms/ps-snackbar.vue';
-import PsTwitterShareButton from '../atoms/ps-twitter-share-button.vue';
-import PsWebShareButton from '../atoms/ps-web-share-button.vue';
+import Vue, { PropType } from 'vue';
+import PsClipboardCopyButton from '../../atoms/ps-clipboard-copy-button.vue';
+import PsSnackbar from '../../atoms/ps-snackbar.vue';
+import PsTwitterShareButton from '../../atoms/ps-twitter-share-button.vue';
+import PsWebShareButton from '../../atoms/ps-web-share-button.vue';
 import shareMedia from '~/constants/share-media';
 import snackbarTypes from '~/constants/snackbar-types';
+import WebShareData from '~/types/web-share-data';
 export default Vue.extend({
   components: {
     PsTwitterShareButton,
@@ -36,9 +38,9 @@ export default Vue.extend({
   },
 
   props: {
-    toShareUrl: {
-      type: String,
-      default: '',
+    toShareData: {
+      type: Object as PropType<WebShareData>,
+      default: null,
     },
   },
 
@@ -63,7 +65,9 @@ export default Vue.extend({
           break;
       }
       this.snackbarType = snackbarTypes.success;
-      this.showSnackbar = true;
+      if (media === shareMedia.clipboard) {
+        this.showSnackbar = true;
+      }
     },
     failedSharing(media: string): void {
       switch (media) {
