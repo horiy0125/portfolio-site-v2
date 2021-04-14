@@ -1,16 +1,15 @@
 <template>
-  <!-- TODO: activate v-app -->
-  <!-- <v-app> -->
-  <div class="t-psSeperateView">
-    <ps-side-navigation :browsed-page-path="browsedPagePath" />
+  <v-app>
+    <div class="t-psSeperateView">
+      <ps-side-navigation :browsed-page-path="browsedPagePath" />
 
-    <div class="t-psSeperateView__contentsOuter">
-      <main class="t-psSeperateView__contentsInner">
-        <slot />
-      </main>
+      <div class="t-psSeperateView__contentsOuter">
+        <main class="t-psSeperateView__contentsInner">
+          <slot />
+        </main>
+      </div>
     </div>
-  </div>
-  <!-- </v-app> -->
+  </v-app>
 </template>
 
 <script lang="ts">
@@ -31,6 +30,9 @@ export default Vue.extend({
 </script>
 
 <style lang="scss" scoped>
+.theme--light.v-application {
+  color: $color-default-black;
+}
 $block: '.t-psSeperateView';
 #{$block} {
   display: inline-block;

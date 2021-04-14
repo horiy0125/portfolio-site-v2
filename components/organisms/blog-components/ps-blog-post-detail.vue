@@ -28,7 +28,9 @@
         <ps-share-buttons :to-share-url="pageUrl" />
       </div>
     </header>
+
     <ps-blog-post-body :body="postDetail.body" />
+
     <footer class="o-psBlogPostDetail__footer"></footer>
   </article>
 </template>

@@ -1,5 +1,3 @@
-import colors from 'vuetify/es5/util/colors';
-
 require('dotenv').config();
 const { NODE_ENV, API_BASE_URL, API_KEY } = process.env;
 
@@ -69,19 +67,10 @@ export default {
   // Vuetify module configuration: https://go.nuxtjs.dev/config-vuetify
   vuetify: {
     customVariables: ['./assets/styles/foundation/_variables.scss'],
-    theme: {
-      // TODO: do proper theme settings
-      dark: false,
-      themes: {
-        dark: {
-          primary: colors.blue.darken2,
-          accent: colors.grey.darken3,
-          secondary: colors.amber.darken3,
-          info: colors.teal.lighten1,
-          warning: colors.amber.base,
-          error: colors.deepOrange.accent4,
-          success: colors.green.accent3,
-        },
+    treeShake: true,
+    defaultAssets: {
+      font: {
+        family: 'Noto Sans JP',
       },
     },
   },
