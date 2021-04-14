@@ -21,7 +21,7 @@ export default Vue.extend({
       window.open(
         'https://twitter.com/share?ref_src=twsrc%5Etfw',
         'Twitter',
-        'noopener',
+        'width=720,height=480,noopener',
       );
     },
   },
