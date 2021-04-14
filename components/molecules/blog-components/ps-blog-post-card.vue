@@ -100,6 +100,7 @@ $block: '.m-psBlogPostCard';
   &__publishedAt {
     font-family: $en-font;
     font-weight: 400;
+    @include font-size(1.8);
   }
   &__category {
     font-weight: 300;
