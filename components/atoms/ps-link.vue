@@ -2,7 +2,13 @@
   <a is="nuxt-link" v-if="isNuxtLink" class="a-psLink" :to="href">
     <slot />
   </a>
-  <a v-else class="a-psLink" :href="href">
+  <a
+    v-else
+    class="a-psLink"
+    :href="href"
+    target="_blank"
+    rel="noopener noreferrer"
+  >
     <slot />
   </a>
 </template>
