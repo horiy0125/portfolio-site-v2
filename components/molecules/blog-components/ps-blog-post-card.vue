@@ -13,6 +13,7 @@
             <ps-time
               class="m-psBlogPostCard__publishedAt"
               :string-time="publishedAt"
+              :seperated-by-slash="false"
             />
             <span class="m-psBlogPostCard__category">{{ category }}</span>
           </header>

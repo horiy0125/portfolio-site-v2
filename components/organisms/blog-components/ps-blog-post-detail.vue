@@ -24,6 +24,7 @@
         <ps-time
           class="o-psBlogPostDetail__publishedAt"
           :string-time="postDetail.publishedAt"
+          :seperated-by-slash="false"
         />
         <ps-blog-share-buttons :to-share-data="toShareData" />
       </div>
@@ -141,6 +142,8 @@ $block: '.o-psBlogPostDetail';
   &__publishedAt {
     display: inline-block;
     font-family: $en-font;
+    padding-top: 2px;
+    @include font-size(1.8);
   }
   &__footer {
     display: flex;

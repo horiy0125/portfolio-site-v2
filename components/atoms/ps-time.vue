@@ -14,6 +14,10 @@ export default Vue.extend({
       type: String,
       default: '',
     },
+    seperatedBySlash: {
+      type: Boolean,
+      default: true,
+    },
   },
 
   computed: {
@@ -21,7 +25,15 @@ export default Vue.extend({
       return stringToDatetime(this.stringTime);
     },
     localeDate(): string {
-      return getLocaleDate(this.stringTime);
+      const localeDate = getLocaleDate(this.stringTime);
+
+      if (this.seperatedBySlash === false) {
+        if (localeDate.includes('/')) {
+          return localeDate.replaceAll('/', '.');
+        }
+      }
+
+      return localeDate;
     },
   },
 });

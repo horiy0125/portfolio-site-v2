@@ -4,6 +4,7 @@
       <ps-time
         class="m-psWhatsNewCard__publishedAt"
         :string-time="publishedAt"
+        :seperated-by-slash="false"
       />
       <span class="m-psWhatsNewCard__type">{{ type }}</span>
     </header>
