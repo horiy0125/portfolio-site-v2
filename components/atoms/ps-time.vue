@@ -28,8 +28,13 @@ export default Vue.extend({
       const localeDate = getLocaleDate(this.stringTime);
 
       if (this.seperatedBySlash === false) {
-        if (localeDate.includes('/')) {
-          return localeDate.replaceAll('/', '.');
+        const regLocaleDate = localeDate.match(
+          /([0-9]{4})(\/)([0-9]{1,2})(\/)([0-9]{1,2})/,
+        );
+        if (regLocaleDate) {
+          if (regLocaleDate.length === 6) {
+            return `${regLocaleDate[1]}.${regLocaleDate[3]}.${regLocaleDate[5]}`;
+          }
         }
       }
 

@@ -33,7 +33,7 @@ export default Vue.extend({
 $block: '.m-psProfileHeader';
 #{$block} {
   display: flex;
-  align-items: flex-end;
+  align-items: center;
   justify-content: space-between;
   width: 100%;
   padding: 32px 0;

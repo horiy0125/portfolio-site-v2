@@ -51,6 +51,9 @@ export default Vue.extend({
 <style lang="scss" scoped>
 $block: '.a-psSnsLink';
 #{$block} {
+  display: flex;
+  align-items: center;
+  justify-content: center;
   &__icon {
     width: 28px;
     height: 28px;
