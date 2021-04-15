@@ -12,7 +12,7 @@
 
 <script lang="ts">
 import Vue from 'vue';
-import PsIcon from './ps-icon.vue';
+import PsIcon from '../ps-icon.vue';
 export default Vue.extend({
   components: { PsIcon },
 

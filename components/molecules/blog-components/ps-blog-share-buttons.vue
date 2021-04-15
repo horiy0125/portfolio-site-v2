@@ -22,10 +22,10 @@
 
 <script lang="ts">
 import Vue, { PropType } from 'vue';
-import PsClipboardCopyButton from '../../atoms/ps-clipboard-copy-button.vue';
+import PsClipboardCopyButton from '../../atoms/buttons/ps-clipboard-copy-button.vue';
 import PsSnackbar from '../../atoms/ps-snackbar.vue';
-import PsTwitterShareButton from '../../atoms/ps-twitter-share-button.vue';
-import PsWebShareButton from '../../atoms/ps-web-share-button.vue';
+import PsTwitterShareButton from '../../atoms/buttons/ps-twitter-share-button.vue';
+import PsWebShareButton from '../../atoms/buttons/ps-web-share-button.vue';
 import shareMedia from '~/constants/share-media';
 import snackbarTypes from '~/constants/snackbar-types';
 import WebShareData from '~/types/web-share-data';

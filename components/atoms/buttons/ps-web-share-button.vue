@@ -6,7 +6,7 @@
 
 <script lang="ts">
 import Vue, { PropType } from 'vue';
-import PsIcon from './ps-icon.vue';
+import PsIcon from '../ps-icon.vue';
 import WebShareData from '~/types/web-share-data';
 import shareMedia from '~/constants/share-media';
 import callWebShareApi from '~/utils/call-web-share-api';

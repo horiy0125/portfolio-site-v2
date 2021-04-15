@@ -6,7 +6,7 @@
 
 <script lang="ts">
 import Vue from 'vue';
-import PsIcon from './ps-icon.vue';
+import PsIcon from '../ps-icon.vue';
 import copyStringToClipboard from '~/utils/copy-string-to-clipboard';
 import shareMedia from '~/constants/share-media';
 export default Vue.extend({
