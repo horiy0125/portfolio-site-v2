@@ -48,12 +48,12 @@ $block: '.o-psAboutProfile';
     padding: 4px 0;
   }
   &__listItemKey {
-    font-weight: 400;
-    margin-right: 8px;
+    font-weight: 500;
     @include font-size(1.8);
   }
   &__listItemValue {
-    line-height: 2;
+    font-weight: 400;
+    padding: 8px 0;
   }
 }
 </style>

@@ -26,7 +26,7 @@ export default Vue.extend({
   },
 
   computed: {
-    iconSrc() {
+    iconSrc(): ImageData | null {
       switch (this.snsName) {
         case 'AtCoder':
           return require('@/assets/icons/atcoder-icon.png');
@@ -54,10 +54,10 @@ $block: '.a-psSnsLink';
   display: flex;
   align-items: center;
   justify-content: center;
+  margin: 0 8px;
   &__icon {
     width: 28px;
     height: 28px;
-    margin: 0 8px;
     @include hover {
       opacity: 0.8;
     }

@@ -49,7 +49,7 @@ import PsArrow from '~/components/atoms/ps-arrow.vue';
 import PsImage from '~/components/atoms/ps-image.vue';
 import PsLink from '~/components/atoms/ps-link.vue';
 import PsTime from '~/components/atoms/ps-time.vue';
-import psBlogPostBody from '~/components/molecules/blog-components/ps-blog-post-body.vue';
+import PsBlogPostBody from '~/components/molecules/blog-components/ps-blog-post-body.vue';
 import PsBlogShareButtons from '~/components/molecules/blog-components/ps-blog-share-buttons.vue';
 import pageNames from '~/config/page-names';
 import pagePaths from '~/config/page-paths';
@@ -58,7 +58,7 @@ import WebShareData from '~/types/web-share-data';
 import BlogPostDetailViewModel from '~/view-models/types/blog-post-detail';
 export default Vue.extend({
   components: {
-    psBlogPostBody,
+    PsBlogPostBody,
     PsImage,
     PsTime,
     PsLink,
