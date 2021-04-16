@@ -1,16 +1,25 @@
 <template>
   <ps-seperate-view :browsed-page-path="browsedPagePath">
+    <ps-tech-experienced />
     <ps-tech-touched />
+    <ps-tech-interested />
   </ps-seperate-view>
 </template>
 
 <script lang="ts">
 import Vue from 'vue';
+import PsTechExperienced from '~/components/organisms/technology-components/sections/ps-tech-experienced.vue';
+import PsTechInterested from '~/components/organisms/technology-components/sections/ps-tech-interested.vue';
 import PsTechTouched from '~/components/organisms/technology-components/sections/ps-tech-touched.vue';
 import PsSeperateView from '~/components/templates/ps-seperate-view.vue';
 import pagePaths from '~/config/page-paths';
 export default Vue.extend({
-  components: { PsSeperateView, PsTechTouched },
+  components: {
+    PsSeperateView,
+    PsTechTouched,
+    PsTechExperienced,
+    PsTechInterested,
+  },
 
   data() {
     return {

@@ -1,10 +1,6 @@
 <template>
-  <ps-section
-    class="o-psTechTouched"
-    en-heading="Touched"
-    jp-heading="触れたことがある・勉強中の技術"
-  >
-    <ps-tech-list :technologies="touchedTechnologies" />
+  <ps-section en-heading="Experienced" jp-heading="馴染みのある技術">
+    <ps-tech-list :technologies="experiencedTechnologies" />
   </ps-section>
 </template>
 
@@ -12,13 +8,13 @@
 import Vue from 'vue';
 import PsSection from '../../ps-section.vue';
 import PsTechList from '../ps-tech-list.vue';
-import touchedTechnologies from '~/contents/technology-page/touched';
+import experiencedTechnologies from '~/contents/technology-page/experienced';
 export default Vue.extend({
   components: { PsSection, PsTechList },
 
   data() {
     return {
-      touchedTechnologies,
+      experiencedTechnologies,
     };
   },
 });

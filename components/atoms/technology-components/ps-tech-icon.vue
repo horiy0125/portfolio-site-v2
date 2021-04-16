@@ -27,7 +27,15 @@ export default Vue.extend({
       if (this.technology === null) {
         return '';
       }
-      const usePortraitStyleList = ['css', 'raspi', 'jupyter'];
+      const usePortraitStyleList = [
+        'css',
+        'raspi',
+        'jupyter',
+        'sidekiq',
+        'svelte',
+        'flutter',
+        'firebase',
+      ];
       const useLandscapeStyleList = [
         'flask',
         'django',
@@ -37,6 +45,7 @@ export default Vue.extend({
         'pandas',
         'k3s',
         'docker',
+        'mysql',
       ];
 
       if (usePortraitStyleList.includes(this.technology.name)) {
@@ -69,6 +78,7 @@ export default Vue.extend({
         case 'next':
           return require('@/assets/icons/next-js.svg');
         case 'react':
+        case 'reactnative':
           return 'data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9Ii0xMS41IC0xMC4yMzE3NCAyMyAyMC40NjM0OCI+CiAgPHRpdGxlPlJlYWN0IExvZ288L3RpdGxlPgogIDxjaXJjbGUgY3g9IjAiIGN5PSIwIiByPSIyLjA1IiBmaWxsPSIjNjFkYWZiIi8+CiAgPGcgc3Ryb2tlPSIjNjFkYWZiIiBzdHJva2Utd2lkdGg9IjEiIGZpbGw9Im5vbmUiPgogICAgPGVsbGlwc2Ugcng9IjExIiByeT0iNC4yIi8+CiAgICA8ZWxsaXBzZSByeD0iMTEiIHJ5PSI0LjIiIHRyYW5zZm9ybT0icm90YXRlKDYwKSIvPgogICAgPGVsbGlwc2Ugcng9IjExIiByeT0iNC4yIiB0cmFuc2Zvcm09InJvdGF0ZSgxMjApIi8+CiAgPC9nPgo8L3N2Zz4K';
         case 'ruby':
           return require('@/assets/icons/ruby.png');
@@ -126,6 +136,24 @@ export default Vue.extend({
           return require('@/assets/icons/free-haml-icon@2x.png');
         case 'jquery':
           return require('@/assets/icons/jquery.png');
+        case 'svelte':
+          return require('@/assets/icons/svelte-logo.svg');
+        case 'mysql':
+          return require('@/assets/icons/logo-mysql-170x115.png');
+        case 'redis':
+          return require('@/assets/icons/redis.png');
+        case 'sidekiq':
+          return require('@/assets/icons/sidekiq.svg');
+        case 'graphql':
+          return require('@/assets/icons/GraphQL_Logo.png');
+        case 'git':
+          return require('@/assets/icons/Git-Icon-1788C.png');
+        case 'flutter':
+          return require('@/assets/icons/logo_flutter_1080px_clr.svg');
+        case 'firebase':
+          return require('@/assets/icons/firebase.svg');
+        case 'pytorch':
+          return require('@/assets/icons/pytorch-logo.png');
         default:
           return null;
       }
