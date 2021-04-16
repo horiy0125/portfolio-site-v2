@@ -40,7 +40,6 @@ export default Vue.extend({
 <style lang="scss" scoped>
 $block: '.o-psAboutProfile';
 #{$block} {
-  display: inline-block;
   &__list {
     padding: 16px 0 16px 40px;
   }

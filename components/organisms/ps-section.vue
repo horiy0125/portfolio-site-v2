@@ -30,8 +30,7 @@ $block: '.o-psSection';
 #{$block} {
   display: inline-block;
   width: 100%;
-  padding-bottom: 32px;
-  margin: 24px 0;
+  padding: 24px 0;
   &__headings {
     display: inline-block;
     width: 100%;
