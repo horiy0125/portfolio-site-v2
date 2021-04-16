@@ -35,6 +35,7 @@ export default Vue.extend({
         'svelte',
         'flutter',
         'firebase',
+        'vuetify',
       ];
       const useLandscapeStyleList = [
         'flask',
@@ -46,6 +47,7 @@ export default Vue.extend({
         'k3s',
         'docker',
         'mysql',
+        'mui',
       ];
 
       if (usePortraitStyleList.includes(this.technology.name)) {
@@ -154,6 +156,22 @@ export default Vue.extend({
           return require('@/assets/icons/firebase.svg');
         case 'pytorch':
           return require('@/assets/icons/pytorch-logo.png');
+        case 'circleci':
+          return require('@/assets/icons/circleci.png');
+        case 'chakraui':
+          return require('@/assets/icons/chakra.png');
+        case 'antdesign':
+          return require('@/assets/icons/antdesign.png');
+        case 'tailwind':
+          return require('@/assets/icons/tailwind.png');
+        case 'cssmodules':
+          return require('@/assets/icons/cssmodules.png');
+        case 'mui':
+          return require('@/assets/icons/materialui.png');
+        case 'styled':
+          return require('@/assets/icons/styled-components.png');
+        case 'vuetify':
+          return require('@/assets/icons/vuetify-logo.png');
         default:
           return null;
       }

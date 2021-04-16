@@ -2,6 +2,7 @@ import Technology from '~/types/technology';
 
 const touchedTechnologies: Technology[] = [
   { name: 'next', label: 'Next.js' },
+  { name: 'cssmodules', label: 'CSS Modules' },
   { name: 'jquery', label: 'jQuery' },
   { name: 'haml', label: 'HAML' },
   { name: 'ruby', label: 'Ruby' },
@@ -13,6 +14,7 @@ const touchedTechnologies: Technology[] = [
   { name: 'mysql', label: 'MySQL' },
   { name: 'redis', label: 'redis' },
   { name: 'sidekiq', label: 'Sidekiq' },
+  { name: 'circleci', label: 'CircleCI' },
   { name: 'docker', label: 'Docker' },
   { name: 'k8s', label: 'Kubernetes' },
   { name: 'k3s', label: 'k3s' },
