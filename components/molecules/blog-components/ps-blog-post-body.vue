@@ -54,6 +54,7 @@ export default Vue.extend({
   color: #fff;
 }
 .html /deep/ code {
+  font-size: inherit;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen,
     Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 }
