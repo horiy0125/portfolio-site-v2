@@ -11,6 +11,9 @@
 
 <script lang="ts">
 import Vue from 'vue';
+import cheerio from 'cheerio';
+import hljs from 'highlight.js';
+import 'highlight.js/styles/night-owl.css';
 import PsBlogPostDetail from '~/components/organisms/blog-components/ps-blog-post-detail.vue';
 import PsNotFound from '~/components/organisms/not-found-components/ps-not-found.vue';
 import PsSeperateView from '~/components/templates/ps-seperate-view.vue';
@@ -49,6 +52,15 @@ export default Vue.extend({
       );
 
       const blogPostDetailViewData = blogPostDetailViewModel(postRes);
+
+      const $ = cheerio.load(blogPostDetailViewData.body);
+      $('pre code').each((_, elm) => {
+        const result = hljs.highlightAuto($(elm).text());
+        $(elm).html(result.value);
+        $(elm).addClass('hljs');
+      });
+
+      blogPostDetailViewData.body = $.html();
 
       const pagePath = `${pagePaths.blogPost}/${id}`;
 

@@ -53,6 +53,10 @@ export default Vue.extend({
   line-height: 1.8;
   color: #fff;
 }
+.html /deep/ code {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen,
+    Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
 .html /deep/ blockquote {
   background: rgb(221, 221, 221);
   padding: 16px;
