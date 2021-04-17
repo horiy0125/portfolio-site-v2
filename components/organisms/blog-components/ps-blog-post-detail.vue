@@ -32,20 +32,20 @@
 
     <ps-blog-post-body :body="postDetail.body" />
 
+    <ps-divider />
+
     <footer class="o-psBlogPostDetail__footer">
-      <ps-link class="o-psBlogPostDetail__footerLink" :href="pagePaths.blog">
-        <ps-arrow :is-small="true" :direction="stringArrows.left" />
-        <span class="o-psBlogPostDetail__footerLinkLabel">
-          ブログ記事一覧に戻る
-        </span>
-      </ps-link>
+      <ps-page-switcher :href="pagePaths.blog" :direction="stringArrows.left">
+        ブログ記事一覧に戻る
+      </ps-page-switcher>
     </footer>
   </article>
 </template>
 
 <script lang="ts">
 import Vue, { PropType } from 'vue';
-import PsArrow from '~/components/atoms/ps-arrow.vue';
+import PsPageSwitcher from '~/components/atoms/buttons/ps-page-switcher.vue';
+import PsDivider from '~/components/atoms/ps-divider.vue';
 import PsImage from '~/components/atoms/ps-image.vue';
 import PsLink from '~/components/atoms/ps-link.vue';
 import PsTime from '~/components/atoms/ps-time.vue';
@@ -63,7 +63,8 @@ export default Vue.extend({
     PsTime,
     PsLink,
     PsBlogShareButtons,
-    PsArrow,
+    PsDivider,
+    PsPageSwitcher,
   },
   props: {
     postDetail: {
@@ -150,17 +151,6 @@ $block: '.o-psBlogPostDetail';
     justify-content: flex-end;
     width: 100%;
     padding: 32px 0;
-  }
-  &__footerLink {
-    display: flex;
-    align-items: center;
-    @include hover {
-      letter-spacing: 1px;
-    }
-  }
-  &__footerLinkLabel {
-    padding: 4px 8px;
-    color: $color-dark-blue;
   }
 }
 </style>
