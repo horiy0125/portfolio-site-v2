@@ -7,7 +7,7 @@
     <div :class="computedInnerClass">
       <ps-image
         :src="albumImage.src"
-        :alt="albumImage.alt"
+        :alt="`”${albumImage.alt}”のサムネイル`"
         class="a-psAlbumThumbnail__image"
         :full-width="false"
       />

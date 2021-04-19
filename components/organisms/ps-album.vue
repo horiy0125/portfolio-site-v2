@@ -18,6 +18,7 @@
     <ps-album-footer
       :chosen-image-index="chosenImageIndex"
       :maximum-index="maximumIndex"
+      :link-url="albumImages[chosenImageIndex].link"
       @change-chosen-image="changeChosenImage"
     />
   </div>

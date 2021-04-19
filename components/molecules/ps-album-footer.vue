@@ -1,14 +1,22 @@
 <template>
   <footer v-if="maximumIndex !== null" class="m-psAlbumFooter">
     <nav class="m-psAlbumFooter__navigation">
-      <button @click="onClickPreviousButton()">
+      <button class="m-psAlbumFooter__button" @click="onClickPreviousButton()">
         <ps-arrow
           :class="computedLeftArrowClass"
           :direction="stringArrows.left"
           :is-small="true"
         />
       </button>
-      <button @click="onClickNextButton()">
+      <ps-link
+        v-if="linkUrl !== null"
+        class="m-psAlbumFooter__link"
+        :href="linkUrl"
+      >
+        リンクを開く
+        <ps-icon class="m-psAlbumFooter__linkIcon"> mdi-open-in-new </ps-icon>
+      </ps-link>
+      <button class="m-psAlbumFooter__button" @click="onClickNextButton()">
         <ps-arrow
           :class="computedRightArrowClass"
           :direction="stringArrows.right"
@@ -22,9 +30,11 @@
 <script lang="ts">
 import Vue from 'vue';
 import PsArrow from '../atoms/ps-arrow.vue';
+import PsLink from '../atoms/ps-link.vue';
+import PsIcon from '../atoms/ps-icon.vue';
 import stringArrows from '~/constants/string-arrows';
 export default Vue.extend({
-  components: { PsArrow },
+  components: { PsArrow, PsLink, PsIcon },
 
   props: {
     chosenImageIndex: {
@@ -33,6 +43,10 @@ export default Vue.extend({
     },
     maximumIndex: {
       type: Number,
+      default: null,
+    },
+    linkUrl: {
+      type: String,
       default: null,
     },
   },
@@ -81,8 +95,22 @@ $block: '.m-psAlbumFooter';
   padding: 0 32px;
   &__navigation {
     display: flex;
+    align-items: center;
     justify-content: space-between;
     width: 100%;
+  }
+  &__link {
+    line-height: 2;
+    color: $color-dark-blue;
+  }
+  &__linkIcon {
+    color: $color-dark-blue;
+  }
+  &__button {
+    padding: 2px;
+  }
+  &__imageIndex {
+    @include font-size(1.6);
   }
   &__disabledArrow {
     background: $color-disabled;
