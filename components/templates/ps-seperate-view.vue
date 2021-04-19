@@ -1,15 +1,15 @@
 <template>
-  <!-- <v-app> -->
-  <div class="t-psSeperateView">
-    <ps-side-navigation :browsed-page-path="browsedPagePath" />
+  <v-app>
+    <div class="t-psSeperateView">
+      <ps-side-navigation :browsed-page-path="browsedPagePath" />
 
-    <div class="t-psSeperateView__contentsOuter">
-      <main class="t-psSeperateView__contentsInner">
-        <slot />
-      </main>
+      <div class="t-psSeperateView__contentsOuter">
+        <main class="t-psSeperateView__contentsInner">
+          <slot />
+        </main>
+      </div>
     </div>
-  </div>
-  <!-- </v-app> -->
+  </v-app>
 </template>
 
 <script lang="ts">
@@ -25,6 +25,14 @@ export default Vue.extend({
       type: String,
       required: true,
     },
+  },
+
+  head() {
+    return {
+      meta: [
+        { name: 'viewport', content: 'width=device-width, initial-scale=1' },
+      ],
+    };
   },
 });
 </script>
