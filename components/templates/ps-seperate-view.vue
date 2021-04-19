@@ -1,15 +1,15 @@
 <template>
-  <!-- <v-app> -->
-  <div class="t-psSeperateView">
-    <ps-side-navigation :browsed-page-path="browsedPagePath" />
+  <v-app>
+    <div class="t-psSeperateView">
+      <ps-side-navigation :browsed-page-path="browsedPagePath" />
 
-    <div class="t-psSeperateView__contentsOuter">
-      <main class="t-psSeperateView__contentsInner">
-        <slot />
-      </main>
+      <div class="t-psSeperateView__contentsOuter">
+        <main class="t-psSeperateView__contentsInner">
+          <slot />
+        </main>
+      </div>
     </div>
-  </div>
-  <!-- </v-app> -->
+  </v-app>
 </template>
 
 <script lang="ts">
@@ -48,10 +48,8 @@ $block: '.t-psSeperateView';
   &__contentsInner {
     display: inline-block;
     width: 100%;
+    max-width: 700px;
     padding: 128px 32px;
-    @include mq_pc {
-      max-width: 700px;
-    }
   }
 }
 </style>
