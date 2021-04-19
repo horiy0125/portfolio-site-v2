@@ -52,6 +52,7 @@ export default {
     '@nuxtjs/axios',
     '@nuxtjs/style-resources',
     '@nuxtjs/dotenv',
+    '@nuxtjs/google-gtag',
   ],
 
   // Axios module configuration: https://go.nuxtjs.dev/config-axios
@@ -92,5 +93,10 @@ export default {
         component: resolve(__dirname, 'pages/404.vue'),
       });
     },
+  },
+
+  'google-gtag': {
+    id: '',
+    debug: true,
   },
 };
