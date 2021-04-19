@@ -1,7 +1,10 @@
 <template>
   <v-app>
     <div class="t-psSeperateView">
-      <ps-side-navigation :browsed-page-path="browsedPagePath" />
+      <ps-side-navigation
+        class="t-psSeperateView__sideNav"
+        :browsed-page-path="browsedPagePath"
+      />
 
       <div class="t-psSeperateView__contentsOuter">
         <main class="t-psSeperateView__contentsInner">
@@ -37,16 +40,30 @@ $block: '.t-psSeperateView';
 #{$block} {
   display: inline-block;
   width: 100vw;
+  &__sideNav {
+    @include mq_sp {
+      display: none;
+    }
+    @include mq_tablet {
+      display: none;
+    }
+  }
   &__contentsOuter {
     display: flex;
     justify-content: center;
     width: 100%;
-    padding-left: 320px;
+    @include mq_pc {
+      padding-left: 320px;
+    }
   }
   &__contentsInner {
     display: inline-block;
-    width: 700px;
+    width: 100%;
     padding: 128px 32px;
+    @include mq_pc {
+      width: 700px;
+      padding: 128px 32px;
+    }
   }
 }
 </style>
