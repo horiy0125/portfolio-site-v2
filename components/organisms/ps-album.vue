@@ -105,6 +105,7 @@ $block: '.o-psAlbum';
 #{$block} {
   display: inline-block;
   width: 100%;
+  padding: 32px 0;
   &__main {
     display: inline-block;
     width: 100%;

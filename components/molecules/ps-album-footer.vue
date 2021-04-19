@@ -92,7 +92,7 @@ $block: '.m-psAlbumFooter';
 #{$block} {
   display: inline-block;
   width: 100%;
-  padding: 0 32px;
+  padding: 0 64px;
   &__navigation {
     display: flex;
     align-items: center;
