@@ -1,5 +1,5 @@
 <template>
-  <footer v-if="albumImageNumber !== null" class="m-psAlbumFooter">
+  <footer v-if="maximumIndex !== null" class="m-psAlbumFooter">
     <nav class="m-psAlbumFooter__navigation">
       <button @click="onClickPreviousButton()">
         <ps-arrow

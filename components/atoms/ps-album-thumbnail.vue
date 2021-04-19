@@ -1,15 +1,17 @@
 <template>
   <button
     v-if="albumImage !== null"
-    :class="computedButtonClass"
+    class="a-psAlbumThumbnail"
     @click="onClickThumbnail(albumImageIndex)"
   >
-    <ps-image
-      :src="albumImage.src"
-      :alt="albumImage.alt"
-      class="a-psAlbumThumbnail__image"
-      :full-width="false"
-    />
+    <div :class="computedInnerClass">
+      <ps-image
+        :src="albumImage.src"
+        :alt="albumImage.alt"
+        class="a-psAlbumThumbnail__image"
+        :full-width="false"
+      />
+    </div>
   </button>
 </template>
 
@@ -35,11 +37,11 @@ export default Vue.extend({
   },
 
   computed: {
-    computedButtonClass(): string {
+    computedInnerClass(): string {
       if (this.albumImageIndex === this.chosenImageIndex) {
-        return 'a-psAlbumThumbnail a-psAlbumThumbnail__chosen';
+        return 'a-psAlbumThumbnail__inner a-psAlbumThumbnail__chosenInner';
       }
-      return 'a-psAlbumThumbnail';
+      return 'a-psAlbumThumbnail__inner';
     },
   },
 
@@ -54,13 +56,16 @@ export default Vue.extend({
 <style lang="scss" scoped>
 $block: '.a-psAlbumThumbnail';
 #{$block} {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border: 3px solid $color-border-gray;
-  border-radius: 4px;
-  margin: 4px;
-  &__chosen {
+  margin: 2px;
+  &__inner {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 3px solid $color-border-gray;
+    border-radius: 4px;
+    margin: 2px;
+  }
+  &__chosenInner {
     border: 3px solid $color-dark-blue;
   }
   &__image {
