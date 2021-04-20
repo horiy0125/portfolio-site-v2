@@ -1,7 +1,15 @@
 <template>
   <v-app>
     <div class="t-psSeperateView">
-      <ps-side-navigation :browsed-page-path="browsedPagePath" />
+      <ps-side-navigation
+        class="t-psSeperateView__sideNav"
+        :browsed-page-path="browsedPagePath"
+      />
+      <ps-mobile-header
+        :show-menu="showMenu"
+        :browsed-page-path="browsedPagePath"
+        @switch-menu-showing="switchMenuShowing"
+      />
 
       <div class="t-psSeperateView__contentsOuter">
         <main class="t-psSeperateView__contentsInner">
@@ -14,10 +22,12 @@
 
 <script lang="ts">
 import Vue from 'vue';
+import PsMobileHeader from '../organisms/ps-mobile-header.vue';
 import PsSideNavigation from '../organisms/ps-side-navigation.vue';
 export default Vue.extend({
   components: {
     PsSideNavigation,
+    PsMobileHeader,
   },
 
   props: {
@@ -27,12 +37,24 @@ export default Vue.extend({
     },
   },
 
+  data() {
+    return {
+      showMenu: false,
+    };
+  },
+
   head() {
     return {
       meta: [
         { name: 'viewport', content: 'width=device-width, initial-scale=1' },
       ],
     };
+  },
+
+  methods: {
+    switchMenuShowing(): void {
+      this.showMenu = !this.showMenu;
+    },
   },
 });
 </script>
@@ -45,6 +67,14 @@ $block: '.t-psSeperateView';
 #{$block} {
   display: inline-block;
   width: 100vw;
+  &__sideNav {
+    @include mq_sp {
+      display: none;
+    }
+    @include mq_tablet {
+      display: none;
+    }
+  }
   &__contentsOuter {
     display: flex;
     justify-content: center;

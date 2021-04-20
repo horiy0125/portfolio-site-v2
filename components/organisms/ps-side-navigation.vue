@@ -33,14 +33,15 @@ export default Vue.extend({
 <style lang="scss" scoped>
 $block: '.o-psSideNavigation';
 #{$block} {
-  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
   @include mq_pc {
-    position: fixed;
-    top: 0;
-    left: 0;
-    display: flex;
-    align-items: center;
-    justify-content: center;
     width: 320px;
     height: 100vh;
   }

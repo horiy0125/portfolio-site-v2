@@ -5,7 +5,7 @@
   >
     <div class="a-psTopLink__inner">
       Portfolio
-      <br />
+      <ps-responsive-break :is-show-pc="true" />
       of
       <br />
       Kaito Horiuchi
@@ -16,9 +16,10 @@
 <script lang="ts">
 import Vue from 'vue';
 import PsLink from './ps-link.vue';
+import PsResponsiveBreak from './ps-responsive-break.vue';
 import pagePaths from '~/config/page-paths';
 export default Vue.extend({
-  components: { PsLink },
+  components: { PsLink, PsResponsiveBreak },
 
   props: {
     isActive: {
@@ -41,8 +42,10 @@ $block: '.a-psTopLink';
   width: 100%;
   padding-left: 12px;
   border-left: 2px solid $color-white;
-
-  @include font-size(2.4);
+  @include font-size(2);
+  @include mq_pc {
+    @include font-size(2.4);
+  }
   &__isActive {
     border-left: 2px solid $color-default-blue;
   }
