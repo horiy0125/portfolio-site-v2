@@ -28,7 +28,11 @@ export default Vue.extend({
 $block: '.o-psTechList';
 #{$block} {
   display: flex;
-  flex-wrap: wrap;
   width: 100%;
+  flex-direction: column;
+  @include mq_pc {
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
 }
 </style>

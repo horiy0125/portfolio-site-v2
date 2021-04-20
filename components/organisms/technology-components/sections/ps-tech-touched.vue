@@ -2,7 +2,7 @@
   <ps-section
     class="o-psTechTouched"
     en-heading="Touched"
-    jp-heading="触れたことがある・勉強中の技術"
+    jp-heading="触ったことのある技術"
   >
     <ps-tech-list :technologies="touchedTechnologies" />
   </ps-section>

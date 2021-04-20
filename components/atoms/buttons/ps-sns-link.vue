@@ -54,7 +54,9 @@ $block: '.a-psSnsLink';
   display: flex;
   align-items: center;
   justify-content: center;
-  margin: 0 8px;
+  @include mq_pc {
+    margin: 0 8px;
+  }
   &__icon {
     width: 28px;
     height: 28px;

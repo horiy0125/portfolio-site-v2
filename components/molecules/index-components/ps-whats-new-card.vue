@@ -96,13 +96,20 @@ $block: '.m-psWhatsNewCard';
     border-radius: 28px;
   }
   &__main {
-    display: flex;
-    align-items: center;
+    display: inline-block;
     width: 100%;
+    @include mq_pc {
+      display: flex;
+      align-items: center;
+    }
   }
   &__thumbnail {
-    width: 192px;
-    margin-right: 32px;
+    width: 100%;
+    margin: 16px 0;
+    @include mq_pc {
+      width: 192px;
+      margin-right: 32px;
+    }
   }
   &__title {
     font-weight: 400;

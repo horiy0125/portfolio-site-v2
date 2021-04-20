@@ -13,28 +13,36 @@
       2019.10 - 2020.10
     </ps-second-heading>
     <p class="o-psAboutCareer__event">
-      株式会社クアンド エンジニア（インターン）
+      株式会社クアンド エンジニア
+      <ps-responsive-break :is-show-sp="true" :is-show-tablet="true" />
+      （インターン）
     </p>
 
     <ps-second-heading class="o-psAboutCareer__year" :use-en-font="true">
       2020.11 - 2021.1
     </ps-second-heading>
     <p class="o-psAboutCareer__event">
-      株式会社Regnio エンジニア（インターン）
+      株式会社Regnio エンジニア
+      <ps-responsive-break :is-show-sp="true" :is-show-tablet="true" />
+      （インターン）
     </p>
 
     <ps-second-heading class="o-psAboutCareer__year" :use-en-font="true">
       2021.2 -
     </ps-second-heading>
     <p class="o-psAboutCareer__event">
-      note株式会社 カイゼンチーム エンジニア（インターン）
+      note株式会社 カイゼンチーム
+      <ps-responsive-break :is-show-sp="true" :is-show-tablet="true" />
+      エンジニア（インターン）
     </p>
 
     <ps-second-heading class="o-psAboutCareer__year" :use-en-font="true">
       2021.3.27 - 2021.3.28
     </ps-second-heading>
     <p class="o-psAboutCareer__event">
-      株式会社サイバーエージェント フロントエンドエンジニア
+      株式会社サイバーエージェント
+      <ps-responsive-break :is-show-sp="true" :is-show-tablet="true" />
+      フロントエンドエンジニア
       <br />
       （2daysハッカソンインターン）
     </p>
@@ -45,8 +53,9 @@
 import Vue from 'vue';
 import PsSection from '../../ps-section.vue';
 import PsSecondHeading from '~/components/atoms/ps-second-heading.vue';
+import PsResponsiveBreak from '~/components/atoms/ps-responsive-break.vue';
 export default Vue.extend({
-  components: { PsSection, PsSecondHeading },
+  components: { PsSection, PsSecondHeading, PsResponsiveBreak },
 });
 </script>
 

@@ -41,7 +41,9 @@ export default Vue.extend({
 $block: '.o-psAboutProfile';
 #{$block} {
   &__list {
-    padding: 16px 0 16px 40px;
+    @include mq_pc {
+      padding: 16px 0 16px 40px;
+    }
   }
   &__listItem {
     padding: 4px 0;

@@ -41,7 +41,7 @@ export default Vue.extend({
 </script>
 
 <style lang="scss" scoped>
-$block: 'a-psResponsiveBreak';
+$block: '.a-psResponsiveBreak';
 #{$block} {
   display: none;
   &__sp {

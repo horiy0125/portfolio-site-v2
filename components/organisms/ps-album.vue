@@ -116,10 +116,16 @@ $block: '.o-psAlbum';
     margin: 32px 0;
   }
   &__imageWide {
-    height: calc(636px / 16 * 9);
+    height: calc((100vw - 64px) / 16 * 9);
+    @include mq_pc {
+      height: calc(636px / 16 * 9);
+    }
   }
   &__imageStandard {
-    height: calc(636px / 4 * 3);
+    height: calc((100vw - 64px) / 4 * 3);
+    @include mq_pc {
+      height: calc(636px / 4 * 3);
+    }
   }
   &__imageContain {
     object-fit: contain;

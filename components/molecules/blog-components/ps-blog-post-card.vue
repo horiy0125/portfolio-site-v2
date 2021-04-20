@@ -67,7 +67,10 @@ $block: '.m-psBlogPostCard';
 #{$block} {
   display: inline-block;
   width: 100%;
-  padding: 0 32px 64px 32px;
+  padding: 32px 0;
+  @include mq_pc {
+    padding: 0 32px 64px 32px;
+  }
   &__outer {
     width: 100%;
     border-radius: 24px;
@@ -84,19 +87,26 @@ $block: '.m-psBlogPostCard';
     width: 100%;
   }
   &__thumbnail {
-    height: 300.3px;
     object-fit: cover;
   }
   &__information {
     display: inline-block;
     width: 100%;
-    padding: 32px;
+    padding: 24px;
+    @include mq_pc {
+      padding: 32px;
+    }
   }
   &__cardHeader {
-    display: flex;
     width: 100%;
-    align-items: center;
-    justify-content: space-between;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    @include mq_pc {
+      flex-direction: row;
+      align-items: center;
+      justify-content: space-between;
+    }
   }
   &__publishedAt {
     font-family: $en-font;
@@ -108,6 +118,10 @@ $block: '.m-psBlogPostCard';
     border: 1px solid $color-border-black;
     padding: 4px 16px;
     border-radius: 28px;
+    margin: 8px 0;
+    @include mq_pc {
+      margin: 0;
+    }
   }
   &__cardContents {
     display: inline-block;

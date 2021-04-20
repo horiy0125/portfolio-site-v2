@@ -3,6 +3,7 @@
     <h1 class="o-psSection__headings">
       <div class="o-psSection__decoration" />
       <span class="o-psSection__enHeading">{{ enHeading }}</span>
+      <ps-responsive-break :is-show-sp="true" :is-show-tablet="true" />
       <span class="o-psSection__jpHeading">{{ jpHeading }}</span>
     </h1>
     <slot />
@@ -11,7 +12,9 @@
 
 <script lang="ts">
 import Vue from 'vue';
+import PsResponsiveBreak from '../atoms/ps-responsive-break.vue';
 export default Vue.extend({
+  components: { PsResponsiveBreak },
   props: {
     jpHeading: {
       type: String,
@@ -52,7 +55,10 @@ $block: '.o-psSection';
   &__jpHeading {
     font-weight: 300;
     margin-left: 12px;
-    @include font-size(2);
+    @include mq_pc {
+      @include font-size(2);
+    }
+    @include font-size(1.8);
     @include mq_sp {
       margin-left: 54px;
     }
