@@ -1,5 +1,11 @@
 <template>
-  <div class="o-psSideNavigation">
+  <div
+    :class="
+      isShowOnlyPc
+        ? 'o-psSideNavigation o-psSideNavigation__pcOnly'
+        : 'o-psSideNavigation'
+    "
+  >
     <nav class="o-psSideNavigation__navigation">
       <ps-top-link :is-active="browsedPagePath === pagePaths.top" />
       <ps-side-links :browsed-page-path="browsedPagePath" />
@@ -19,6 +25,10 @@ export default Vue.extend({
     browsedPagePath: {
       type: String,
       required: true,
+    },
+    isShowOnlyPc: {
+      type: Boolean,
+      default: false,
     },
   },
 
@@ -44,6 +54,14 @@ $block: '.o-psSideNavigation';
   @include mq_pc {
     width: 320px;
     height: 100vh;
+  }
+  &__pcOnly {
+    @include mq_sp {
+      display: none;
+    }
+    @include mq_tablet {
+      display: none;
+    }
   }
   &__navigation {
     display: inline-block;

@@ -2,7 +2,7 @@
   <v-app>
     <div class="t-psSeperateView">
       <ps-side-navigation
-        class="t-psSeperateView__sideNav"
+        :is-show-only-pc="true"
         :browsed-page-path="browsedPagePath"
       />
       <ps-mobile-header
@@ -67,14 +67,6 @@ $block: '.t-psSeperateView';
 #{$block} {
   display: inline-block;
   width: 100vw;
-  &__sideNav {
-    @include mq_sp {
-      display: none;
-    }
-    @include mq_tablet {
-      display: none;
-    }
-  }
   &__contentsOuter {
     display: flex;
     justify-content: center;
