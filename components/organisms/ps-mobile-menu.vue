@@ -38,6 +38,7 @@ $block: '.o-psMobileMenu';
   width: 100vw;
   height: 100vh;
   background: $color-white;
+  touch-action: none;
   &__closeButton {
     position: absolute;
     top: 24px;
