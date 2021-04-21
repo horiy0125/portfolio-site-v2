@@ -59,6 +59,7 @@ $block: '.o-psMobileHeader';
     padding: 0;
     border: none;
     display: inline-block;
+    width: auto;
   }
   &__button {
     padding: 8px 0 8px 8px;
