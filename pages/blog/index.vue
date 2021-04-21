@@ -1,5 +1,8 @@
 <template>
-  <ps-seperate-view :browsed-page-path="browsedPagePath">
+  <ps-seperate-view
+    :browsed-page-path="browsedPagePath"
+    :browsed-page-meta-title="browsedPageMetaTitle"
+  >
     <ps-section en-heading="Blog Posts" jp-heading="ブログ記事">
       <ps-blog-post-cards :posts="blogPostCardViewData" />
     </ps-section>
@@ -13,6 +16,7 @@ import PsSection from '~/components/organisms/ps-section.vue';
 import PsSeperateView from '~/components/templates/ps-seperate-view.vue';
 import apiEndpoints from '~/config/api/api-endpoints';
 import apiRequestHeaders from '~/config/api/api-request-headers';
+import pageMetaTitles from '~/config/page-meta-titles';
 import pagePaths from '~/config/page-paths';
 import FetchPostsApiResponse from '~/types/config/api/fetch-posts';
 import FetchQiitaPostsApiResponse from '~/types/config/api/fetch-qiita-posts';
@@ -52,6 +56,7 @@ export default Vue.extend({
   data() {
     return {
       browsedPagePath: pagePaths.blog,
+      browsedPageMetaTitle: pageMetaTitles.blog,
     };
   },
 });

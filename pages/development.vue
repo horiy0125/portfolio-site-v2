@@ -1,5 +1,8 @@
 <template>
-  <ps-seperate-view :browsed-page-path="browsedPagePath">
+  <ps-seperate-view
+    :browsed-page-path="browsedPagePath"
+    :browsed-page-meta-title="browsedPageMetaTitle"
+  >
     <ps-dev-personal />
     <ps-divider />
     <ps-dev-team />
@@ -12,6 +15,7 @@ import PsDivider from '~/components/atoms/ps-divider.vue';
 import PsDevPersonal from '~/components/organisms/development-components/sections/ps-dev-personal.vue';
 import PsDevTeam from '~/components/organisms/development-components/sections/ps-dev-team.vue';
 import PsSeperateView from '~/components/templates/ps-seperate-view.vue';
+import pageMetaTitles from '~/config/page-meta-titles';
 import pagePaths from '~/config/page-paths';
 export default Vue.extend({
   components: {
@@ -24,6 +28,7 @@ export default Vue.extend({
   data() {
     return {
       browsedPagePath: pagePaths.development,
+      browsedPageMetaTitle: pageMetaTitles.development,
     };
   },
 });

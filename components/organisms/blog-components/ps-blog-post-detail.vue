@@ -51,7 +51,6 @@ import PsLink from '~/components/atoms/ps-link.vue';
 import PsTime from '~/components/atoms/ps-time.vue';
 import PsBlogPostBody from '~/components/molecules/blog-components/ps-blog-post-body.vue';
 import PsBlogShareButtons from '~/components/molecules/blog-components/ps-blog-share-buttons.vue';
-import pageNames from '~/config/page-names';
 import pagePaths from '~/config/page-paths';
 import stringArrows from '~/constants/string-arrows';
 import WebShareData from '~/types/web-share-data';
@@ -81,7 +80,6 @@ export default Vue.extend({
     return {
       pagePaths,
       stringArrows,
-      pageNames,
     };
   },
 

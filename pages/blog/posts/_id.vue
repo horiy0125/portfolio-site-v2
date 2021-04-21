@@ -1,5 +1,9 @@
 <template>
-  <ps-seperate-view :browsed-page-path="pagePath">
+  <ps-seperate-view
+    :browsed-page-path="pagePath"
+    :browsed-page-meta-title="browsedPageMetaTitle"
+    :blog-post-thumbnail-url="blogPostThumbnailUrl"
+  >
     <ps-not-found v-if="invalidPostId" />
     <ps-blog-post-detail
       v-else
@@ -24,6 +28,7 @@ import pagePaths from '~/config/page-paths';
 import FetchPostApiResponse from '~/types/config/api/fetch-post';
 import FetchPostsApiResponse from '~/types/config/api/fetch-posts';
 import blogPostDetailViewModel from '~/view-models/blog-post-detail';
+import pageMetaTitles from '~/config/page-meta-titles';
 export default Vue.extend({
   components: { PsSeperateView, PsBlogPostDetail, PsNotFound },
 
@@ -67,6 +72,8 @@ export default Vue.extend({
       return {
         pageUrl: domain + pagePath,
         pagePath,
+        browsedPageMetaTitle: blogPostDetailViewData.title,
+        blogPostThumbnailUrl: blogPostDetailViewData.thumbnailUrl,
         blogPostDetailViewData,
         invalidPostId: false,
       };
@@ -74,6 +81,8 @@ export default Vue.extend({
     return {
       invalidPostId: true,
       pagePath: pagePaths.notFound,
+      browsedPageMetaTitle: pageMetaTitles.notFound,
+      blogPostThumbnailUrl: null,
     };
   },
 });

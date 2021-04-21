@@ -1,5 +1,8 @@
 <template>
-  <ps-seperate-view :browsed-page-path="browsedPagePath">
+  <ps-seperate-view
+    :browsed-page-path="browsedPagePath"
+    :browsed-page-meta-title="browsedPageMetaTitle"
+  >
     <ps-tech-experienced />
     <ps-divider />
     <ps-tech-touched />
@@ -15,6 +18,7 @@ import PsTechExperienced from '~/components/organisms/technology-components/sect
 import PsTechInterested from '~/components/organisms/technology-components/sections/ps-tech-interested.vue';
 import PsTechTouched from '~/components/organisms/technology-components/sections/ps-tech-touched.vue';
 import PsSeperateView from '~/components/templates/ps-seperate-view.vue';
+import pageMetaTitles from '~/config/page-meta-titles';
 import pagePaths from '~/config/page-paths';
 export default Vue.extend({
   components: {
@@ -28,6 +32,7 @@ export default Vue.extend({
   data() {
     return {
       browsedPagePath: pagePaths.technology,
+      browsedPageMetaTitle: pageMetaTitles.technology,
     };
   },
 });
