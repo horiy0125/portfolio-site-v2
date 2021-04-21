@@ -10,6 +10,8 @@ import PsIcon from '../ps-icon.vue';
 import WebShareData from '~/types/web-share-data';
 import shareMedia from '~/constants/share-media';
 import callWebShareApi from '~/utils/call-web-share-api';
+import getUserAgent from '~/utils/get-user-agent';
+import userAgents from '~/constants/user-agents';
 export default Vue.extend({
   components: { PsIcon },
 
@@ -20,8 +22,18 @@ export default Vue.extend({
     },
   },
 
+  computed: {
+    userAgent(): string | null {
+      return getUserAgent();
+    },
+  },
+
   methods: {
     callWebShareApi(): void {
+      if (this.userAgent === userAgents.macos) {
+        this.$emit('web-share-from-mac');
+        return;
+      }
       if (this.toShareData === null) {
         this.$emit('failed-sharing', shareMedia.webShareApi);
       } else {

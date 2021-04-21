@@ -9,6 +9,7 @@
       :to-share-data="toShareData"
       @succeeded-sharing="succeededSharing"
       @failed-sharing="failedSharing"
+      @web-share-from-mac="webShareFromMac"
     />
     <ps-snackbar
       :show="showSnackbar"
@@ -56,7 +57,7 @@ export default Vue.extend({
     succeededSharing(media: string): void {
       switch (media) {
         case shareMedia.clipboard:
-          this.snackbarMessage = 'URLをクリップボードにコピーしました';
+          this.snackbarMessage = 'URLをクリップボードにコピーしました。';
           break;
         default:
           break;
@@ -79,6 +80,11 @@ export default Vue.extend({
           break;
       }
       this.snackbarType = snackbarTypes.error;
+      this.showSnackbar = true;
+    },
+    webShareFromMac(): void {
+      this.snackbarMessage = 'ご使用のブラウザ・OSが共有に対応していません。';
+      this.snackbarType = snackbarTypes.warning;
       this.showSnackbar = true;
     },
   },
