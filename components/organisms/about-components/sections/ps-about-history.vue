@@ -61,7 +61,7 @@
       <p class="o-psAboutHistory__paragraph">
         浪人していたため、人生で唯一あまりパソコンに触っていない1年間であったが、ちょくちょくパソコンの分解やOSの入れ替えなどをしていた。
       </p>
-      <ps-album :album-images="highAlbumImages" />
+      <ps-album :album-images="roninAlbumImages" />
     </section>
 
     <section class="o-psAboutHistory__subSection">
