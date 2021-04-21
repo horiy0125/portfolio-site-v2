@@ -64,7 +64,10 @@ export default Vue.extend({
       this.blogPostThumbnailUrl === null
         ? '学生エンジニア 堀内 凱登 / Kaito Horiuchi (hori) のポートフォリオ・ブログです。'
         : `ブログ記事 『${this.browsedPageMetaTitle}』`;
-    const ogpImageUrl = `${domain}/ogp.jpg`;
+    const ogpImageUrl =
+      this.blogPostThumbnailUrl === null
+        ? `${domain}/ogp.jpg`
+        : this.blogPostThumbnailUrl;
 
     return {
       title: this.browsedPageMetaTitle,
