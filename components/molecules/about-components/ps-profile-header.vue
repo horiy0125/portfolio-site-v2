@@ -2,7 +2,6 @@
   <div class="m-psProfileHeader">
     <h2 class="m-psProfileHeader__name">
       堀内 凱登
-      <ps-responsive-break :is-show-sp="true" :is-show-tablet="true" />
       <span class="m-psProfileHeader__enName"> / Kaito Horiuchi </span>
     </h2>
     <div class="m-psProfileHeader__accountLinks">
@@ -19,10 +18,9 @@
 <script lang="ts">
 import Vue from 'vue';
 import PsSnsLink from '~/components/atoms/buttons/ps-sns-link.vue';
-import PsResponsiveBreak from '~/components/atoms/ps-responsive-break.vue';
 import snsAccounts from '~/contents/about-page/sns';
 export default Vue.extend({
-  components: { PsSnsLink, PsResponsiveBreak },
+  components: { PsSnsLink },
   data() {
     return {
       snsAccounts,
@@ -36,10 +34,14 @@ $block: '.m-psProfileHeader';
 #{$block} {
   width: 100%;
   padding: 32px 0;
-  @include mq_pc {
-    display: flex;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  @include mq_sp {
+    flex-direction: column;
     align-items: center;
-    justify-content: space-between;
+    justify-content: center;
   }
   &__name {
     font-weight: 300;
@@ -59,12 +61,7 @@ $block: '.m-psProfileHeader';
   &__accountLinks {
     display: flex;
     @include mq_sp {
-      justify-content: space-between;
-      padding-top: 32px;
-    }
-    @include mq_tablet {
-      justify-content: space-between;
-      padding-top: 32px;
+      padding-top: 16px;
     }
   }
 }

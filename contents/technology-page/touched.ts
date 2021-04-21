@@ -13,7 +13,6 @@ const touchedTechnologies: Technology[] = [
   { name: 'echo', label: 'Echo' },
   { name: 'mysql', label: 'MySQL' },
   { name: 'redis', label: 'redis' },
-  { name: 'sidekiq', label: 'Sidekiq' },
   { name: 'circleci', label: 'CircleCI' },
   { name: 'docker', label: 'Docker' },
   { name: 'k8s', label: 'Kubernetes' },
