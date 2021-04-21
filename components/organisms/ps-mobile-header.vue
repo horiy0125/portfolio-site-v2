@@ -58,6 +58,7 @@ $block: '.o-psMobileHeader';
   &__topLink {
     padding: 0;
     border: none;
+    display: inline-block;
   }
   &__button {
     padding: 8px 0 8px 8px;

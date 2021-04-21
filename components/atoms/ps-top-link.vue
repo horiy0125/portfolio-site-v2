@@ -39,6 +39,7 @@ export default Vue.extend({
 <style lang="scss" scoped>
 $block: '.a-psTopLink';
 #{$block} {
+  display: inline-block;
   width: 100%;
   padding-left: 12px;
   border-left: 2px solid $color-white;
@@ -50,6 +51,7 @@ $block: '.a-psTopLink';
     border-left: 2px solid $color-default-blue;
   }
   &__inner {
+    display: inline-block;
     text-transform: uppercase;
     font-family: $en-font;
     color: $color-default-black;
