@@ -96,7 +96,7 @@ export default {
   },
 
   'google-gtag': {
-    id: '',
-    debug: true,
+    id: 'G-MJG5JVC3VF',
+    debug: false,
   },
 };
