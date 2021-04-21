@@ -2,7 +2,7 @@
   <ps-section
     class="o-psDevPersonal"
     en-heading="Personal"
-    jp-heading="個人で開発したもの"
+    jp-heading="個人開発"
   >
     <section class="o-psDevPersonal__subSection">
       <ps-second-heading class="o-psDevPersonal__secondHeading">
