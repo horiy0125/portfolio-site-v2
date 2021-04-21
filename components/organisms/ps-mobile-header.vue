@@ -52,6 +52,9 @@ $block: '.o-psMobileHeader';
   padding: 16px 32px;
   border-bottom: 1px solid $color-border-gray;
   background: $color-white;
+  @include mq_pc {
+    display: none;
+  }
   &__topLink {
     padding: 0;
     border: none;
