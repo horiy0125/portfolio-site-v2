@@ -2,12 +2,12 @@ import AlbumImage from '~/types/album-image';
 
 const linebotAlbumImages: AlbumImage[] = [
   {
-    src: '/images/IMG_0199.PNG',
+    src: '/images/IMG_0199.png',
     alt: '実際に作ったLINEbotアカウント',
     link: null,
   },
   {
-    src: '/images/IMG_0200.PNG',
+    src: '/images/IMG_0200.png',
     alt: 'LINEbotアカウントとのトーク画面',
     link: null,
   },
