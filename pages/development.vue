@@ -5,7 +5,7 @@
   >
     <ps-dev-personal />
     <ps-divider />
-    <ps-dev-team />
+    <!-- <ps-dev-team /> -->
   </ps-seperate-view>
 </template>
 
@@ -13,7 +13,7 @@
 import Vue from 'vue';
 import PsDivider from '~/components/atoms/ps-divider.vue';
 import PsDevPersonal from '~/components/organisms/development-components/sections/ps-dev-personal.vue';
-import PsDevTeam from '~/components/organisms/development-components/sections/ps-dev-team.vue';
+// import PsDevTeam from '~/components/organisms/development-components/sections/ps-dev-team.vue';
 import PsSeperateView from '~/components/templates/ps-seperate-view.vue';
 import pageMetaTitles from '~/config/page-meta-titles';
 import pagePaths from '~/config/page-paths';
@@ -22,7 +22,7 @@ export default Vue.extend({
     PsSeperateView,
     PsDevPersonal,
     PsDivider,
-    PsDevTeam,
+    // PsDevTeam,
   },
 
   data() {
