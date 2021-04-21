@@ -5,18 +5,13 @@
     </ps-dev-sub-section>
 
     <ps-dev-sub-section second-heading="Portfolio Site (v2)">
-      <ps-album
-        :album-images="portfolioAlbumImages"
-        :image-aspect="imageAspect.wide"
-        :image-fitting="imageFitting.contain"
-      />
+      <ps-album :album-images="portfolioAlbumImages" />
     </ps-dev-sub-section>
 
     <ps-dev-sub-section second-heading="CA Tech Challenge Store">
       <ps-album
         :album-images="caAlbumImages"
         :image-aspect="imageAspect.wide"
-        :image-fitting="imageFitting.contain"
       />
     </ps-dev-sub-section>
   </ps-section>
