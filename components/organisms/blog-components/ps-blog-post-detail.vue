@@ -111,21 +111,30 @@ $block: '.o-psBlogPostDetail';
     align-items: center;
     width: 100%;
     padding: 16px 0 16px 16px;
+    @include mq_sp {
+      padding-left: 0;
+    }
   }
   &__blogLink {
     color: $color-default-black;
+    @include mq_sp {
+      display: none;
+    }
     @include hover {
       color: $color-default-blue;
     }
   }
   &__stepperDivider {
     padding: 0 12px;
+    @include mq_sp {
+      display: none;
+    }
   }
   &__categoryName {
     font-weight: 300;
     border: 1px solid $color-border-black;
-    padding: 4px 16px;
     border-radius: 28px;
+    padding: 4px 16px;
   }
   &__title {
     font-weight: 700;
