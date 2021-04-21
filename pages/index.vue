@@ -1,93 +1,75 @@
 <template>
-  <v-row justify="center" align="center">
-    <v-col cols="12" sm="8" md="6">
-      <div class="text-center">
-        <logo />
-        <vuetify-logo />
-      </div>
-      <v-card>
-        <v-card-title class="headline">
-          Welcome to the Vuetify + Nuxt.js template
-        </v-card-title>
-        <v-card-text>
-          <p>
-            Vuetify is a progressive Material Design component framework for
-            Vue.js. It was designed to empower developers to create amazing
-            applications.
-          </p>
-          <p>
-            For more information on Vuetify, check out the
-            <a
-              href="https://vuetifyjs.com"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              documentation </a
-            >.
-          </p>
-          <p>
-            If you have questions, please join the official
-            <a
-              href="https://chat.vuetifyjs.com/"
-              target="_blank"
-              rel="noopener noreferrer"
-              title="chat"
-            >
-              discord </a
-            >.
-          </p>
-          <p>
-            Find a bug? Report it on the github
-            <a
-              href="https://github.com/vuetifyjs/vuetify/issues"
-              target="_blank"
-              rel="noopener noreferrer"
-              title="contribute"
-            >
-              issue board </a
-            >.
-          </p>
-          <p>
-            Thank you for developing with Vuetify and I look forward to bringing
-            more exciting features in the future.
-          </p>
-          <div class="text-xs-right">
-            <em><small>&mdash; John Leider</small></em>
-          </div>
-          <hr class="my-3" />
-          <a
-            href="https://nuxtjs.org/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Nuxt Documentation
-          </a>
-          <br />
-          <a
-            href="https://github.com/nuxt/nuxt.js"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Nuxt GitHub
-          </a>
-        </v-card-text>
-        <v-card-actions>
-          <v-spacer />
-          <v-btn color="primary" nuxt to="/inspire"> Continue </v-btn>
-        </v-card-actions>
-      </v-card>
-    </v-col>
-  </v-row>
+  <ps-seperate-view
+    :browsed-page-path="browsedPagePath"
+    :browsed-page-meta-title="browsedPageMetaTitle"
+  >
+    <ps-section en-heading="What's new" jp-heading="新着情報">
+      <ps-whats-new :whats-new="whatsNewViewData" />
+    </ps-section>
+  </ps-seperate-view>
 </template>
 
-<script>
-import Logo from '~/components/Logo.vue'
-import VuetifyLogo from '~/components/VuetifyLogo.vue'
+<script lang="ts">
+import Vue from 'vue';
+import PsWhatsNew from '~/components/organisms/index-components/ps-whats-new.vue';
+import PsSection from '~/components/organisms/ps-section.vue';
+import PsSeperateView from '~/components/templates/ps-seperate-view.vue';
+import apiEndpoints from '~/config/api/api-endpoints';
+import apiRequestHeaders from '~/config/api/api-request-headers';
+import pageMetaTitles from '~/config/page-meta-titles';
+import pagePaths from '~/config/page-paths';
+import FetchInfoNoticeApiResponse from '~/types/config/api/fetch-info-notice';
+import FetchPostsApiResponse from '~/types/config/api/fetch-posts';
+import FetchQiitaPostsApiResponse from '~/types/config/api/fetch-qiita-posts';
+import WhatsNewViewModel from '~/view-models/types/whats-new';
+import newestSortPosts from '~/view-models/utils/newest-sort-posts';
+import whatsNewViewModel from '~/view-models/whats-new';
+export default Vue.extend({
+  components: { PsSeperateView, PsSection, PsWhatsNew },
 
-export default {
-  components: {
-    Logo,
-    VuetifyLogo,
+  async asyncData({ $axios }) {
+    const postsRes: FetchPostsApiResponse = await $axios.$get(
+      apiEndpoints.posts,
+      {
+        headers: apiRequestHeaders,
+      },
+    );
+
+    const qiitaPostsRes: FetchQiitaPostsApiResponse = await $axios.$get(
+      apiEndpoints.qiita_posts,
+      {
+        headers: apiRequestHeaders,
+      },
+    );
+
+    const infoNoticeRes: FetchInfoNoticeApiResponse = await $axios.$get(
+      apiEndpoints.info_notice,
+      {
+        headers: apiRequestHeaders,
+      },
+    );
+
+    const whatsNewViewData: WhatsNewViewModel[] = whatsNewViewModel(
+      postsRes.contents,
+      qiitaPostsRes.contents,
+      infoNoticeRes.contents,
+    );
+
+    whatsNewViewData.sort((a, b) => newestSortPosts(a, b));
+
+    return {
+      whatsNewViewData:
+        whatsNewViewData.length > 3
+          ? whatsNewViewData.slice(0, 3)
+          : whatsNewViewData,
+    };
   },
-}
+
+  data() {
+    return {
+      browsedPagePath: pagePaths.top,
+      browsedPageMetaTitle: pageMetaTitles.top,
+    };
+  },
+});
 </script>
