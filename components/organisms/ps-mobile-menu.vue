@@ -32,6 +32,7 @@ export default Vue.extend({
 $block: '.o-psMobileMenu';
 #{$block} {
   position: fixed;
+  z-index: 1000;
   top: 0;
   left: 0;
   display: inline-block;
