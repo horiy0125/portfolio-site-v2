@@ -6,7 +6,7 @@
   />
 
   <v-slide-y-transition v-else>
-    <header class="o-psMobileHeader">
+    <header :class="computedHeaderClass">
       <ps-top-link class="o-psMobileHeader__topLink" />
       <button
         class="o-psMobileHeader__button"
@@ -23,6 +23,7 @@ import Vue from 'vue';
 import PsIcon from '../atoms/ps-icon.vue';
 import PsTopLink from '../atoms/ps-top-link.vue';
 import PsMobileMenu from './ps-mobile-menu.vue';
+import pagePaths from '~/config/page-paths';
 export default Vue.extend({
   components: { PsTopLink, PsIcon, PsMobileMenu },
 
@@ -34,6 +35,15 @@ export default Vue.extend({
     browsedPagePath: {
       type: String,
       required: true,
+    },
+  },
+
+  computed: {
+    computedHeaderClass(): string {
+      if (this.browsedPagePath === pagePaths.notFound) {
+        return 'o-psMobileHeader o-psMobileHeader__absolute';
+      }
+      return 'o-psMobileHeader';
     },
   },
 });
@@ -55,6 +65,9 @@ $block: '.o-psMobileHeader';
   background: $color-white;
   @include mq_pc {
     display: none;
+  }
+  &__absolute {
+    position: absolute;
   }
   &__topLink {
     padding: 0;
