@@ -38,7 +38,7 @@ export default Vue.extend({
     randomHamsterImageSrc(): string {
       const randomNumber = Math.floor(Math.random() * 2);
 
-      if (randomNumber > 1) {
+      if (randomNumber === 1) {
         return '/images/hamsters/2014-09-10 18.45.22.jpg';
       } else {
         return '/images/hamsters/2014-09-05 18.47.34.jpg';
@@ -58,7 +58,9 @@ $block: '.o-psNotFound';
   }
   &__randomHamster {
     width: 100%;
+    max-height: 640px;
     padding-bottom: 32px;
+    object-fit: cover;
   }
 }
 </style>
