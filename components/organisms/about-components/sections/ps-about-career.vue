@@ -14,7 +14,7 @@
     </ps-second-heading>
     <p class="o-psAboutCareer__event">
       株式会社クアンド エンジニア
-      <ps-responsive-break :is-show-sp="true" :is-show-tablet="true" />
+      <ps-responsive-break :is-show-sp="true" />
       （インターン）
     </p>
 
@@ -23,7 +23,7 @@
     </ps-second-heading>
     <p class="o-psAboutCareer__event">
       株式会社Regnio エンジニア
-      <ps-responsive-break :is-show-sp="true" :is-show-tablet="true" />
+      <ps-responsive-break :is-show-sp="true" />
       （インターン）
     </p>
 
@@ -32,7 +32,7 @@
     </ps-second-heading>
     <p class="o-psAboutCareer__event">
       note株式会社 カイゼンチーム
-      <ps-responsive-break :is-show-sp="true" :is-show-tablet="true" />
+      <ps-responsive-break :is-show-sp="true" />
       エンジニア（インターン）
     </p>
 
@@ -41,7 +41,7 @@
     </ps-second-heading>
     <p class="o-psAboutCareer__event">
       株式会社サイバーエージェント
-      <ps-responsive-break :is-show-sp="true" :is-show-tablet="true" />
+      <ps-responsive-break :is-show-sp="true" />
       フロントエンドエンジニア
       <br />
       （2daysハッカソンインターン）

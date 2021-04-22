@@ -3,7 +3,7 @@
     <h1 class="o-psSection__headings">
       <div class="o-psSection__decoration" />
       <span class="o-psSection__enHeading">{{ enHeading }}</span>
-      <ps-responsive-break :is-show-sp="true" :is-show-tablet="true" />
+      <ps-responsive-break :is-show-sp="true" />
       <span class="o-psSection__jpHeading">{{ jpHeading }}</span>
     </h1>
     <slot />
