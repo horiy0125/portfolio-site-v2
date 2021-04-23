@@ -1,12 +1,14 @@
 <template>
+  <ps-not-found-template v-if="invalidPostId">
+    <ps-not-found />
+  </ps-not-found-template>
   <ps-seperate-view
+    v-else
     :browsed-page-path="pagePath"
     :browsed-page-meta-title="browsedPageMetaTitle"
     :blog-post-thumbnail-url="blogPostThumbnailUrl"
   >
-    <ps-not-found v-if="invalidPostId" />
     <ps-blog-post-detail
-      v-else
       :page-url="pageUrl"
       :post-detail="blogPostDetailViewData"
     />
@@ -29,8 +31,14 @@ import FetchPostApiResponse from '~/types/config/api/fetch-post';
 import FetchPostsApiResponse from '~/types/config/api/fetch-posts';
 import blogPostDetailViewModel from '~/view-models/blog-post-detail';
 import pageMetaTitles from '~/config/page-meta-titles';
+import PsNotFoundTemplate from '~/components/templates/ps-not-found-template.vue';
 export default Vue.extend({
-  components: { PsSeperateView, PsBlogPostDetail, PsNotFound },
+  components: {
+    PsSeperateView,
+    PsBlogPostDetail,
+    PsNotFound,
+    PsNotFoundTemplate,
+  },
 
   async asyncData({ $axios, params }) {
     const postsRes: FetchPostsApiResponse = await $axios.$get(

@@ -47,7 +47,7 @@ $block: '.t-psNotFoundTemplate';
     display: inline-block;
     width: 100%;
     max-width: 800px;
-    padding: 128px 32px 32px 32px;
+    padding: 64px 32px 32px 32px;
   }
 }
 </style>
