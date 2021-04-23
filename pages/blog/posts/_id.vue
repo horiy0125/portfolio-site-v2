@@ -30,7 +30,6 @@ import pagePaths from '~/config/page-paths';
 import FetchPostApiResponse from '~/types/config/api/fetch-post';
 import FetchPostsApiResponse from '~/types/config/api/fetch-posts';
 import blogPostDetailViewModel from '~/view-models/blog-post-detail';
-import pageMetaTitles from '~/config/page-meta-titles';
 import PsNotFoundTemplate from '~/components/templates/ps-not-found-template.vue';
 export default Vue.extend({
   components: {
@@ -88,9 +87,6 @@ export default Vue.extend({
     }
     return {
       invalidPostId: true,
-      pagePath: pagePaths.notFound,
-      browsedPageMetaTitle: pageMetaTitles.notFound,
-      blogPostThumbnailUrl: null,
     };
   },
 });

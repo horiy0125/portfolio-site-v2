@@ -10,19 +10,14 @@
 
 <script lang="ts">
 import Vue from 'vue';
+import pageMetaTitles from '~/config/page-meta-titles';
 export default Vue.extend({
-  props: {
-    metaTitle: {
-      type: String,
-      default: '',
-    },
-  },
-
   head() {
     const siteName = 'Portfolio of Kaito Horiuchi';
+    const metaTitle = pageMetaTitles.notFound;
 
     return {
-      title: this.metaTitle,
+      title: metaTitle,
       titleTemplate: `%s｜${siteName}`,
       meta: [
         { charset: 'utf-8' },
