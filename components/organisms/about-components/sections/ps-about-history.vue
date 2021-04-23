@@ -15,19 +15,24 @@
       <ps-second-heading class="o-psAboutHistory__year" :use-en-font="true">
         2006 - 2011
       </ps-second-heading>
+      <ps-album :album-images="primaryAlbumImages" />
       <ps-paragraph>
         小学生低学年の頃、父親からノートパソコンをクリスマスプレゼントとしてもらったことを機に、コンピューターの世界にのめり込んでいく。
         <br />
         最初はインターネットを使ってみたり、Windows
         ムービーメーカー(懐かしい)を触ってみたりという程度だったが、徐々にOSの入れ替えやハードウェアの換装など、低レイヤーな領域に興味を持つようになった。
       </ps-paragraph>
-      <ps-album :album-images="primaryAlbumImages" />
     </section>
 
     <section class="o-psAboutHistory__subSection">
       <ps-second-heading class="o-psAboutHistory__year" :use-en-font="true">
         2012 - 2014
       </ps-second-heading>
+      <ps-image
+        class="o-psAboutHistory__image"
+        src="/images/IMG_2752.jpeg"
+        alt="Mac OS XをインストールしたWindows PC"
+      />
       <ps-paragraph>
         中学生になったころ、普通のWindows PCにMac OS
         Xをインストールする”Hackintosh”というものに手を出していた。（技術的な好奇心というよりは、単純にお金がなくMacintoshが買えなかったためである。）
@@ -35,33 +40,28 @@
         P2Pファイル共有やMac
         OSのドライバ"Kext"など、初めて触れたものも多かった。
       </ps-paragraph>
-      <ps-image
-        class="o-psAboutHistory__image"
-        src="/images/IMG_2752.jpeg"
-        alt="Mac OS XをインストールしたWindows PC"
-      />
     </section>
 
     <section class="o-psAboutHistory__subSection">
       <ps-second-heading class="o-psAboutHistory__year" :use-en-font="true">
         2015 - 2017
       </ps-second-heading>
+      <ps-album :album-images="highAlbumImages" />
       <ps-paragraph>
         高校生になって、興味がモバイル端末のOSやハードウェアにシフトしていた。さすがにスマホのハードウェア換装はできないが、OS(ROM)の入れ替えは可能だったため、root化→ブートローダーアンロック→ROM焼きという手順を踏んでAndroid端末のカスタムを行っていた。
         <br />
         この頃、今でいうSIMフリー端末は皆無で、キャリアから販売されたスマホを白ロムとして購入するしかなく、余計なアプリが大量にプリインストールされていた。さらに、端末のスペックがまだまだ低かったので、通常は不可能なカスタマイズを施したりプリインアプリを消したりするのにROM焼きは非常に有効な方法だった。
       </ps-paragraph>
-      <ps-album :album-images="highAlbumImages" />
     </section>
 
     <section class="o-psAboutHistory__subSection">
       <ps-second-heading class="o-psAboutHistory__year" :use-en-font="true">
         2018
       </ps-second-heading>
+      <ps-album :album-images="roninAlbumImages" />
       <ps-paragraph>
         浪人していたため、人生で唯一あまりパソコンに触っていない1年間であったが、ちょくちょくパソコンの分解やOSの入れ替えなどをしていた。
       </ps-paragraph>
-      <ps-album :album-images="roninAlbumImages" />
     </section>
 
     <section class="o-psAboutHistory__subSection">
@@ -116,7 +116,7 @@ export default Vue.extend({
 $block: '.o-psAboutHistory';
 #{$block} {
   &__subSection {
-    padding: 16px 0 32px 0;
+    padding: 32px 0;
   }
   &__year {
     font-weight: 500;
