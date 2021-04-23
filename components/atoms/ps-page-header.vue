@@ -14,11 +14,19 @@ export default Vue.extend({});
 <style lang="scss" scoped>
 $block: '.a-psPageHeader';
 #{$block} {
-  font-family: $en-font;
-  text-transform: uppercase;
+  display: inline-block;
+  width: 100%;
+  padding: 32px 0;
+  @include mq_pc {
+    display: none;
+  }
   &__heading {
+    font-family: $en-font;
+    text-transform: uppercase;
+    text-align: center;
     font-weight: 400;
-    @include font-size(2.4);
+    letter-spacing: 2px;
+    @include font-size(2.8);
   }
 }
 </style>
