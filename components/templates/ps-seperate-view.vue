@@ -71,7 +71,10 @@ export default Vue.extend({
 
     return {
       title: this.browsedPageMetaTitle,
-      titleTemplate: `%s｜${siteName}`,
+      titleTemplate:
+        this.blogPostThumbnailUrl === null
+          ? `%s｜${siteName}`
+          : `%s｜${blogName}`,
       meta: [
         { charset: 'utf-8' },
         { name: 'viewport', content: 'width=device-width, initial-scale=1' },
