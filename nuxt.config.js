@@ -1,5 +1,5 @@
 require('dotenv').config();
-const { NODE_ENV, API_BASE_URL, API_KEY } = process.env;
+const { NODE_ENV, API_BASE_URL, API_KEY, GOOGLE_GTAG_ID } = process.env;
 
 export default {
   // Target: https://go.nuxtjs.dev/config-target
@@ -96,7 +96,7 @@ export default {
   },
 
   'google-gtag': {
-    id: 'G-MJG5JVC3VF',
+    id: GOOGLE_GTAG_ID,
     debug: false,
   },
 };
