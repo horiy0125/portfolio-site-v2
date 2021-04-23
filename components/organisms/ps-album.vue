@@ -113,7 +113,7 @@ $block: '.o-psAlbum';
   &__image {
     width: 100%;
     border: 1px solid $color-border-gray;
-    margin: 32px 0;
+    margin: 16px 0;
   }
   &__imageWide {
     height: calc((100vw - 64px) / 16 * 9);

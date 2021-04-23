@@ -26,6 +26,7 @@ $block: '.o-psDevSubSection';
 #{$block} {
   display: inline-block;
   width: 100%;
+  padding: 32px 0;
   &__secondHeading {
     font-weight: 300;
   }
