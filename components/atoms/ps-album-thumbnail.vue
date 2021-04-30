@@ -72,6 +72,7 @@ $block: '.a-psAlbumThumbnail';
     width: 64px;
     height: 64px;
     object-fit: cover;
+    border-radius: 4px;
   }
 }
 </style>
