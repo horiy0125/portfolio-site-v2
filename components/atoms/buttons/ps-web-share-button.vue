@@ -26,12 +26,16 @@ export default Vue.extend({
     userAgent(): string | null {
       return getUserAgent();
     },
+    viewedByChrome(): boolean {
+      const ua = navigator.userAgent;
+      return ua.includes('Chrome');
+    },
   },
 
   methods: {
     callWebShareApi(): void {
-      if (this.userAgent === userAgents.macos) {
-        this.$emit('web-share-from-mac');
+      if (this.userAgent === userAgents.macos && this.viewedByChrome) {
+        this.$emit('unsupported-web-share');
         return;
       }
       if (this.toShareData === null) {
