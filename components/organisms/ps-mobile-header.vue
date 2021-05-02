@@ -1,12 +1,12 @@
 <template>
-  <transition>
-    <ps-mobile-menu
-      v-if="showMenu"
-      :browsed-page-path="browsedPagePath"
-      @switch-menu-showing="$emit('switch-menu-showing')"
-    />
+  <ps-mobile-menu
+    v-if="showMenu"
+    :browsed-page-path="browsedPagePath"
+    @switch-menu-showing="$emit('switch-menu-showing')"
+  />
 
-    <header v-else class="o-psMobileHeader">
+  <v-slide-y-transition v-else>
+    <header class="o-psMobileHeader">
       <ps-top-link class="o-psMobileHeader__topLink" />
       <button
         class="o-psMobileHeader__button"
@@ -15,7 +15,7 @@
         <ps-icon class="o-psMobileHeader__menuIcon">mdi-menu</ps-icon>
       </button>
     </header>
-  </transition>
+  </v-slide-y-transition>
 </template>
 
 <script lang="ts">
@@ -40,14 +40,6 @@ export default Vue.extend({
 </script>
 
 <style lang="scss" scoped>
-.v-leave-active,
-.v-enter-active {
-  transition: opacity 0.36s;
-}
-.v-enter,
-.v-leave-to {
-  opacity: 0;
-}
 $block: '.o-psMobileHeader';
 #{$block} {
   position: fixed;
