@@ -1,12 +1,12 @@
 <template>
-  <ps-mobile-menu
-    v-if="showMenu"
-    :browsed-page-path="browsedPagePath"
-    @switch-menu-showing="$emit('switch-menu-showing')"
-  />
+  <transition>
+    <ps-mobile-menu
+      v-if="showMenu"
+      :browsed-page-path="browsedPagePath"
+      @switch-menu-showing="$emit('switch-menu-showing')"
+    />
 
-  <v-slide-y-transition v-else>
-    <header :class="computedHeaderClass">
+    <header v-else class="o-psMobileHeader">
       <ps-top-link class="o-psMobileHeader__topLink" />
       <button
         class="o-psMobileHeader__button"
@@ -15,7 +15,7 @@
         <ps-icon class="o-psMobileHeader__menuIcon">mdi-menu</ps-icon>
       </button>
     </header>
-  </v-slide-y-transition>
+  </transition>
 </template>
 
 <script lang="ts">
@@ -23,7 +23,6 @@ import Vue from 'vue';
 import PsIcon from '../atoms/ps-icon.vue';
 import PsTopLink from '../atoms/ps-top-link.vue';
 import PsMobileMenu from './ps-mobile-menu.vue';
-import pagePaths from '~/config/page-paths';
 export default Vue.extend({
   components: { PsTopLink, PsIcon, PsMobileMenu },
 
@@ -37,19 +36,18 @@ export default Vue.extend({
       required: true,
     },
   },
-
-  computed: {
-    computedHeaderClass(): string {
-      if (this.browsedPagePath === pagePaths.notFound) {
-        return 'o-psMobileHeader o-psMobileHeader__absolute';
-      }
-      return 'o-psMobileHeader';
-    },
-  },
 });
 </script>
 
 <style lang="scss" scoped>
+.v-leave-active,
+.v-enter-active {
+  transition: opacity 0.36s;
+}
+.v-enter,
+.v-leave-to {
+  opacity: 0;
+}
 $block: '.o-psMobileHeader';
 #{$block} {
   position: fixed;
@@ -65,9 +63,6 @@ $block: '.o-psMobileHeader';
   background: $color-white;
   @include mq_pc {
     display: none;
-  }
-  &__absolute {
-    position: absolute;
   }
   &__topLink {
     padding: 0;

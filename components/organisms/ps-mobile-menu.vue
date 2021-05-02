@@ -1,15 +1,13 @@
 <template>
-  <v-slide-y-transition>
-    <div class="o-psMobileMenu">
-      <button
-        class="o-psMobileMenu__closeButton"
-        @click="$emit('switch-menu-showing')"
-      >
-        <ps-icon>mdi-close</ps-icon>
-      </button>
-      <ps-side-navigation :browsed-page-path="browsedPagePath" />
-    </div>
-  </v-slide-y-transition>
+  <div class="o-psMobileMenu">
+    <button
+      class="o-psMobileMenu__closeButton"
+      @click="$emit('switch-menu-showing')"
+    >
+      <ps-icon>mdi-close</ps-icon>
+    </button>
+    <ps-side-navigation :browsed-page-path="browsedPagePath" />
+  </div>
 </template>
 
 <script lang="ts">
