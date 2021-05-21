@@ -1,20 +1,27 @@
 # portfolio-site-v2
 
-## Build Setup
+## 技術スタック
 
-```bash
-# install dependencies
-$ npm install
+- 言語
 
-# serve with hot reload at localhost:3000
-$ npm run dev
+  TypeScript
 
-# build for production and launch server
-$ npm run build
-$ npm run start
+- フレームワーク
 
-# generate static project
-$ npm run generate
-```
+  Nuxt.js
 
-For detailed explanation on how things work, check out [Nuxt.js docs](https://nuxtjs.org).
+- UI ライブラリ
+
+  Vuetify.js
+
+- 静的ホスティング
+
+  Vercel
+
+- シンタックスハイライト
+
+  highlight.js
+
+- ヘッドレス CMS
+
+  microCMS
