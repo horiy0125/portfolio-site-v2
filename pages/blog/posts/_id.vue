@@ -1,9 +1,6 @@
 <template>
-  <ps-not-found-template v-if="invalidPostId">
-    <ps-not-found />
-  </ps-not-found-template>
   <ps-seperate-view
-    v-else
+    v-if="error === null"
     :browsed-page-path="pagePath"
     :browsed-page-meta-title="browsedPageMetaTitle"
     :blog-post-thumbnail-url="blogPostThumbnailUrl"
@@ -13,6 +10,9 @@
       :post-detail="blogPostDetailViewData"
     />
   </ps-seperate-view>
+  <ps-not-found-template v-else>
+    <ps-not-found />
+  </ps-not-found-template>
 </template>
 
 <script lang="ts">
@@ -68,11 +68,11 @@ export default Vue.extend({
         browsedPageMetaTitle: blogPostDetailViewData.title,
         blogPostThumbnailUrl: blogPostDetailViewData.thumbnailUrl,
         blogPostDetailViewData,
-        invalidPostId: false,
+        error: null,
       };
     } catch (error) {
       return {
-        invalidPostId: true,
+        error,
       };
     }
   },
