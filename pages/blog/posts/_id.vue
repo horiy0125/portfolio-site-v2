@@ -19,7 +19,7 @@
 import Vue from 'vue';
 import cheerio from 'cheerio';
 import hljs from 'highlight.js';
-import 'highlight.js/styles/night-owl.css';
+import 'highlight.js/styles/vs2015.css';
 import PsBlogPostDetail from '~/components/organisms/blog-components/ps-blog-post-detail.vue';
 import PsNotFound from '~/components/organisms/not-found-components/ps-not-found.vue';
 import PsSeperateView from '~/components/templates/ps-seperate-view.vue';
