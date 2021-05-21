@@ -28,7 +28,6 @@ import apiRequestHeaders from '~/config/api/api-request-headers';
 import domain from '~/config/domain';
 import pagePaths from '~/config/page-paths';
 import FetchPostApiResponse from '~/types/config/api/fetch-post';
-import FetchPostsApiResponse from '~/types/config/api/fetch-posts';
 import blogPostDetailViewModel from '~/view-models/blog-post-detail';
 import PsNotFoundTemplate from '~/components/templates/ps-not-found-template.vue';
 export default Vue.extend({
@@ -40,22 +39,9 @@ export default Vue.extend({
   },
 
   async asyncData({ $axios, params }) {
-    const postsRes: FetchPostsApiResponse = await $axios.$get(
-      apiEndpoints.posts,
-      {
-        headers: apiRequestHeaders,
-      },
-    );
-
-    const validPostIds: string[] = [];
-
-    postsRes.contents.forEach(post => {
-      validPostIds.push(post.id);
-    });
-
     const id = params.id;
 
-    if (validPostIds.includes(id)) {
+    try {
       const postRes: FetchPostApiResponse = await $axios.$get(
         `${apiEndpoints.posts}/${id}`,
         {
@@ -84,10 +70,11 @@ export default Vue.extend({
         blogPostDetailViewData,
         invalidPostId: false,
       };
+    } catch (error) {
+      return {
+        invalidPostId: true,
+      };
     }
-    return {
-      invalidPostId: true,
-    };
   },
 });
 </script>
