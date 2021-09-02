@@ -44,7 +44,18 @@
       <ps-responsive-break :is-show-sp="true" />
       フロントエンドエンジニア
       <br />
-      （2daysハッカソンインターン）
+      （2days Webフロント向け ハッカソン型インターン 3位）
+    </p>
+
+    <ps-second-heading class="o-psAboutCareer__year" :use-en-font="true">
+      2021.8.9 - 2021.8.27
+    </ps-second-heading>
+    <p class="o-psAboutCareer__event">
+      株式会社VOYAGE GROUP
+      <ps-responsive-break :is-show-sp="true" />
+      エンジニア（インターン）
+      <br />
+      （Treasure 2021 グランプリ・UI/UX賞）
     </p>
   </ps-section>
 </template>
